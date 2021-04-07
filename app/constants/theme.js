@@ -31,27 +31,27 @@ export const SIZES = {
 };
 
 export const FONTS = {
-  h1: {fontFamily: 'Inter-Black', fontSize: SIZES.h1, lineHeight: 36},
-  h2: {fontFamily: 'Inter-Bold', fontSize: SIZES.h2, lineHeight: 30},
-  h3: {fontFamily: 'Inter-Bold', fontSize: SIZES.h3, lineHeight: 22},
-  h4: {fontFamily: 'Inter-Bold', fontSize: SIZES.h4, lineHeight: 22},
+  h1: {fontFamily: 'Rubik-Black', fontSize: SIZES.h1, lineHeight: 36},
+  h2: {fontFamily: 'Rubik-Bold', fontSize: SIZES.h2, lineHeight: 30},
+  h3: {fontFamily: 'Rubik-Bold', fontSize: SIZES.h3, lineHeight: 22},
+  h4: {fontFamily: 'Rubik-Bold', fontSize: SIZES.h4, lineHeight: 22},
   bodyOne: {
-    fontFamily: 'Inter-Regular',
+    fontFamily: 'Rubik-Regular',
     fontSize: SIZES.bodyOne,
     lineHeight: 36,
   },
   bodyTwo: {
-    fontFamily: 'Inter-Regular',
+    fontFamily: 'Rubik-Regular',
     fontSize: SIZES.bodyTwo,
     lineHeight: 30,
   },
   bodyThr: {
-    fontFamily: 'Inter-Regular',
+    fontFamily: 'Rubik-Regular',
     fontSize: SIZES.bodyThr,
     lineHeight: 22,
   },
   bodyFour: {
-    fontFamily: 'Inter-Regular',
+    fontFamily: 'Rubik-Regular',
     fontSize: SIZES.bodyFour,
     lineHeight: 22,
   },
