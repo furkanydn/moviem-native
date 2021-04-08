@@ -22,6 +22,7 @@ export const COLORS = {
   sky: '#00AFF0',
   lightpink: '#FFC0CB',
   navajowhite: '#FFDEAD',
+  shadow: '#8D979E',
 };
 
 export const SIZES = {
@@ -37,9 +38,10 @@ export const SIZES = {
   h3: 16,
   h4: 14,
   bodyOne: 30,
-  bodyTwo: 22,
+  bodyTwo: 18,
   bodyThr: 16,
   bodyFour: 14,
+  bodyFive: 12,
 
   // Uygulama boyutları
   width,
@@ -70,6 +72,11 @@ export const FONTS = {
     fontFamily: 'Rubik-Regular',
     fontSize: SIZES.bodyFour,
     lineHeight: 22,
+  },
+  bodyFive: {
+    fontFamily: 'Rubik-Regular',
+    fontSize: SIZES.bodyFive,
+    lineHeight: 18,
   },
 };
 
