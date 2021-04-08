@@ -2,10 +2,26 @@ import {Dimensions} from 'react-native';
 const {width, height} = Dimensions.get('window');
 
 export const COLORS = {
-  black: '#131418',
-  white: '#C0C0C0',
+  black: '#000000',
+  white: '#FFFFFF',
+  silver: '#C0C0C0',
   gray: '#808080',
   blue: '#1E90FF',
+  openBlue: '#A8DADC',
+  lightsalmon: '#FFA07A',
+  salmon: '#FA8072',
+  carrot: '#E67E22',
+  darkslategray: '#2F4F4F',
+  forestgreen: '#228B22',
+  green: '#008000',
+  emerland: '#2ECC71',
+  amethyst: '#9B59B6',
+  greensea: '#16A085',
+  fluent: '#6B69D6',
+  hunt: '#DA552F',
+  sky: '#00AFF0',
+  lightpink: '#FFC0CB',
+  navajowhite: '#FFDEAD',
 };
 
 export const SIZES = {
@@ -16,7 +32,7 @@ export const SIZES = {
   padding: 24,
 
   // Başlık boyutları
-  h1: 30,
+  h1: 36,
   h2: 22,
   h3: 16,
   h4: 14,

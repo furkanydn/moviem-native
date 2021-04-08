@@ -9,11 +9,11 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-// Sabit Değerler
+// Sabitler
 import {images, theme} from '../../constants';
 const {onBoardOne, onBoardTwo, onBoardThree} = images;
 
-// Tema nesneleri
+// Tema Nesneleri
 const {COLORS, SIZES, FONTS} = theme;
 
 // Kukla olarak kullanılacak veri
@@ -21,7 +21,7 @@ const onDummyData = [
   {
     title: 'Welcome',
     description:
-      'Millions of movies, TV shows and people to discover. Explore now.',
+      'Put simply, we live and breathe community and thats precisely what makes us different. We are incredibly proud of this.',
     img: onBoardOne,
   },
   {
@@ -50,7 +50,7 @@ const OnBoarding = () => {
       }
     });
     return () => scrollX.removeListener();
-  }, []);
+  });
   // Render edilmesi gereken içerik
   function renderContent() {
     return (
@@ -68,49 +68,21 @@ const OnBoarding = () => {
         )}>
         {onDummyData.map((item, index) => (
           <View key={index} style={{width: SIZES.width}}>
-            <View
-              style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+            <View style={styles.imageContainer}>
               <Image
                 source={item.img}
                 resizeMode="contain"
-                style={{width: '100%', height: '100%'}}
+                style={styles.image}
               />
             </View>
             {/*Ekrandaki Yazılar İçin Alan*/}
-            <View
-              style={{
-                position: 'absolute',
-                bottom: '10%',
-                left: 15,
-                right: 15,
-              }}>
-              <Text
-                style={{...FONTS.h1, color: COLORS.gray, textAlign: 'center'}}>
-                {item.title}
-              </Text>
-              <Text
-                style={{
-                  ...FONTS.bodyThr,
-                  textAlign: 'center',
-                  color: COLORS.black,
-                  marginTop: SIZES.base,
-                }}>
-                {item.description}
-              </Text>
+            <View style={styles.contentContainer}>
+              <Text style={styles.header}>{item.title}</Text>
+              <Text style={styles.description}>{item.description}</Text>
             </View>
             {/*Ekrandaki Butonlar*/}
             <TouchableOpacity
-              style={{
-                position: 'absolute',
-                bottom: 5,
-                right: 5,
-                width: 120,
-                height: 50,
-                justifyContent: 'center',
-                paddingLeft: 25,
-                borderRadius: 25,
-                backgroundColor: COLORS.blue,
-              }}
+              style={styles.buttonContainer}
               onPress={() => console.log('press')}>
               <Text style={{...FONTS.h2, color: COLORS.white}}>
                 {completed ? 'Lets go' : 'Next'}
@@ -143,7 +115,7 @@ const OnBoarding = () => {
             <Animated.View
               key={`dot-${index}`}
               opacity={opacity}
-              style={[styles.dot, {width: dotSize, height: 20}]}
+              style={[styles.dot, {width: dotSize}]}
             />
           );
         })}
@@ -164,11 +136,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.navajowhite,
   },
   dotRootContainer: {
     position: 'absolute',
-    bottom: SIZES.height > 700 ? '25%' : '18%',
+    bottom: SIZES.height > 700 ? '30%' : '20%',
   },
   dotContainer: {
     flexDirection: 'row',
@@ -177,9 +149,56 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   dot: {
-    borderRadius: SIZES.radius,
-    backgroundColor: COLORS.blue,
-    marginHorizontal: SIZES.radius / 2,
+    height: 8,
+    borderRadius: 5,
+    backgroundColor: COLORS.sky,
+    alignContent: 'center',
+    marginRight: 10,
+    marginBottom: 25,
+  },
+  imageContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    bottom: '10%',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+  },
+  contentContainer: {
+    position: 'absolute',
+    bottom: '10%',
+    left: 15,
+    right: 15,
+  },
+  header: {
+    ...FONTS.h1,
+    color: COLORS.forestgreen,
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  description: {
+    ...FONTS.bodyThr,
+    textAlign: 'center',
+    color: COLORS.black,
+    marginTop: SIZES.base,
+  },
+  buttonContainer: {
+    position: 'absolute',
+    bottom: 10,
+    right: 0,
+    width: '40%',
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderBottomLeftRadius: 25,
+    borderTopLeftRadius: 25,
+    backgroundColor: COLORS.amethyst,
+  },
+  buttonText: {
+    ...FONTS.h2,
+    color: COLORS.white,
   },
 });
 

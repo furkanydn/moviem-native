@@ -1,3 +1,4 @@
-import OnBoarding from './OnBoarding/OnBoarding'
+import OnBoarding from './OnBoarding/OnBoarding';
+import UpComing from './UpComing/UpComing';
 
-export {OnBoarding};
+export {OnBoarding, UpComing};
