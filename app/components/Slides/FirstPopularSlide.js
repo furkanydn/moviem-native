@@ -1,6 +1,6 @@
-import React, {memo, useCallback} from 'react';
+import React, {memo} from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
-import {Clock} from '../../icons';
+import {Clock, Date} from '../../icons';
 import {Rate} from '../index';
 import {COLORS, FONTS} from '../../constants';
 
@@ -10,7 +10,7 @@ interface PopulerProps {
   rate: number;
   review: number;
   time: number;
-  cal: number;
+  date: number;
   onPress: () => void;
 }
 
@@ -26,7 +26,11 @@ const Item = memo((props: PopulerProps) => {
       <View style={styles.viewFooter}>
         <View style={styles.flexDirection}>
           <Clock />
-          <Text style={styles.textReview}>{`${props.time} Minute`}</Text>
+          <Text style={styles.textReview}>{`${props.time}`}</Text>
+        </View>
+        <View style={styles.flexDirection}>
+          <Date />
+          <Text style={styles.textReview}>{`${props.date}`}</Text>
         </View>
       </View>
     </TouchableOpacity>

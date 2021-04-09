@@ -1,4 +1,4 @@
 import OnBoarding from './OnBoarding/OnBoarding';
-import UpComing from './UpComing/UpComing';
+import Main from './Main/Main';
 
-export {OnBoarding, UpComing};
+export {OnBoarding, Main};
