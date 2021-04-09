@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {
   SafeAreaView,
   View,
@@ -8,6 +8,8 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {ROUTES} from '../../utils/index';
 
 // Sabitler
 import {images, theme} from '../../constants';
@@ -41,8 +43,15 @@ const onDummyData = [
 const OnBoarding = () => {
   const scrollX = new Animated.Value(0);
   const [completed, setCompleted] = React.useState(false);
+  // Sona gelindiğinde yönlendirme yapılması
+  const navigate = useNavigation();
+  const goMain = useCallback(() => {
+    navigate.navigate('Main', {
+      IsExplorer: true,
+    });
+  }, [navigate]);
 
-  // Eğer kullanıcı son sayfaya geldiyse
+  // Eğer kullanıcı son sayfaya gelirse
   React.useEffect(() => {
     scrollX.addListener(({value}) => {
       if (Math.floor(value / SIZES.width) === onDummyData.length - 1) {
@@ -51,6 +60,7 @@ const OnBoarding = () => {
     });
     return () => scrollX.removeListener();
   });
+
   // Render edilmesi gereken içerik
   function renderContent() {
     return (
@@ -81,9 +91,7 @@ const OnBoarding = () => {
               <Text style={styles.description}>{item.description}</Text>
             </View>
             {/*Ekrandaki Butonlar*/}
-            <TouchableOpacity
-              style={styles.buttonContainer}
-              onPress={() => console.log('press')}>
+            <TouchableOpacity style={styles.buttonContainer} onPress={goMain}>
               <Text style={{...FONTS.h2, color: COLORS.white}}>
                 {completed ? 'Lets go' : 'Next'}
               </Text>

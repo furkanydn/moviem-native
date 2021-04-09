@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 // Ekranlar
-import {OnBoarding} from './app/screens';
+import {OnBoarding, Main} from './app/screens';
 
 const Stack = createStackNavigator();
 const App = () => {
@@ -16,11 +16,16 @@ const App = () => {
           component={OnBoarding}
           options={{headerShown: false}}
         />
+        <Stack.Screen
+          name="Main"
+          component={Main}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
 export default () => {
-  return <App/>;
+  return <App />;
 };

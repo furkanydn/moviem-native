@@ -23,6 +23,7 @@ export const COLORS = {
   lightpink: '#FFC0CB',
   navajowhite: '#FFDEAD',
   shadow: '#8D979E',
+  dot: '#FFFEFA',
 };
 
 export const SIZES = {
