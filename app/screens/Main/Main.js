@@ -9,7 +9,7 @@ import {FirstPopularSlide} from '../../components/index';
 
 import {images, theme} from '../../constants';
 const {COLORS, FONTS} = theme;
-const {mainPoster, swiperImage} = images;
+const {swiperImage} = images;
 
 import {phoneWidth} from '../../utils/dimens';
 import {Best} from '../../icons/index';
@@ -46,24 +46,24 @@ const dataPopular = [
   {
     img: require('../../assets/images/dimg.jpg'),
     name: 'X-Men: Apocalypse',
-    rate: 6.5,
-    review: 6.5,
+    rate: 7,
+    review: 7,
     time: 113,
     date: '2021-03-24',
   },
   {
     img: require('../../assets/images/dimg.jpg'),
-    name: 'X-Men: Apocalypse',
-    rate: 6.5,
-    review: 6.5,
+    name: 'Captain America: The Winter Soldier',
+    rate: 2,
+    review: 2,
     time: 113,
     date: '2021-03-24',
   },
   {
     img: require('../../assets/images/dimg.jpg'),
-    name: 'X-Men: Apocalypse',
-    rate: 6.5,
-    review: 6.5,
+    name: 'The Amazing Spider-Man',
+    rate: 5,
+    review: 4,
     time: 113,
     date: '2021-03-24',
   },
@@ -135,7 +135,7 @@ const Home = memo(() => {
           <Best />
         </View>
         <Text style={style.popular_card_header}>What's Popular</Text>
-        <View>{renderMovies(dataPopular)}</View>
+        <View>{renderMovies()}</View>
       </View>
     );
   });
@@ -158,7 +158,7 @@ export default Home;
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.cowhite,
   },
   flex: {
     flex: 1,
@@ -182,25 +182,26 @@ const style = StyleSheet.create({
   },
   swiper_text: {
     position: 'absolute',
-    top: 24,
-    right: 24,
+    top: 0,
+    right: 2,
     justifyContent: 'center',
     alignItems: 'center',
   },
   root_flat: {
     paddingBottom: 24,
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.cowhite,
   },
   popular_card_header: {
     ...FONTS.h3,
     color: COLORS.behance,
     fontWeight: '500',
     paddingTop: 24,
-    paddingLeft: 16,
+    paddingLeft: 12,
   },
   popular_cards: {
     flexWrap: 'wrap',
-    paddingLeft: 16,
+    paddingLeft: 8,
+    paddingRight: 8,
     paddingTop: 16,
   },
 });

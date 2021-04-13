@@ -17,7 +17,7 @@ interface PopularProps {
 const Item = memo((props: PopularProps) => {
   return (
     <TouchableOpacity style={styles.container} onPress={props.onPress}>
-      <Image resizeMode="contain" style={styles.image} source={props.img} />
+      <Image resizeMode="cover" style={styles.image} source={props.img} />
       <Text style={styles.textHeaderTitle}>{props.name}</Text>
       <View style={styles.viewRate}>
         <Rate rate={props.rate} />
@@ -41,7 +41,7 @@ export default Item;
 
 const styles = StyleSheet.create({
   container: {
-    width: 250,
+    width: 200,
     borderRadius: 12,
     marginRight: 12,
     backgroundColor: COLORS.white,
@@ -50,34 +50,36 @@ const styles = StyleSheet.create({
       width: 0,
       height: 12,
     },
-    shadowOpacity: 0.5,
-    shadowRadius: 18,
+    shadowOpacity: 0.6,
+    shadowRadius: 16,
   },
   image: {
-    width: 250,
-    height: 180,
+    width: 200,
+    height: 120,
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
   },
   textHeaderTitle: {
-    ...FONTS.bodyTwo,
+    ...FONTS.bodyThr,
+    height: 48,
     fontWeight: '600',
-    paddingTop: 8,
-    paddingLeft: 16,
+    paddingTop: 4,
+    paddingLeft: 4,
   },
   viewRate: {
     flexDirection: 'row',
     paddingTop: 8,
-    paddingLeft: 16,
   },
   textReview: {
     ...FONTS.bodyFive,
     fontWeight: '400',
-    paddingLeft: 8,
+    paddingLeft: 4,
   },
   viewFooter: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: 16,
-    paddingHorizontal: 16,
+    paddingVertical: 12,
+    paddingHorizontal: 4,
   },
   flexDirection: {
     flexDirection: 'row',

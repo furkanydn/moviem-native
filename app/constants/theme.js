@@ -5,6 +5,7 @@ export const COLORS = {
   black: '#000000',
   white: '#FFFFFF',
   silver: '#C0C0C0',
+  cowhite: '#F7F7FB',
   gray: '#808080',
   blue: '#1E90FF',
   openBlue: '#A8DADC',
