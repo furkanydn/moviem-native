@@ -6,36 +6,45 @@ import Swiper from 'react-native-swiper';
 import keyExpo from '../../utils/keyExpo';
 
 import {FirstPopularSlide} from '../../components/index';
-import {COLORS} from '../../constants';
-import {mainPoster, swiperImage} from '../../constants/images';
+
+import {images, theme} from '../../constants';
+const {COLORS, FONTS} = theme;
+const {mainPoster, swiperImage} = images;
+
 import {phoneWidth} from '../../utils/dimens';
+import {Best} from '../../icons/index';
 
 const swiperData = [
   {
     id: 0,
     path: swiperImage,
+    title: 'Ringing',
   },
   {
     id: 1,
     path: swiperImage,
+    title: 'Ringing',
   },
   {
     id: 2,
     path: swiperImage,
+    title: 'Ringing',
   },
   {
     id: 3,
     path: swiperImage,
+    title: 'Ringing',
   },
   {
     id: 4,
     path: swiperImage,
+    title: 'Ringing',
   },
 ];
 
 const dataPopular = [
   {
-    img: mainPoster,
+    img: require('../../assets/images/dimg.jpg'),
     name: 'X-Men: Apocalypse',
     rate: 6.5,
     review: 6.5,
@@ -43,7 +52,7 @@ const dataPopular = [
     date: '2021-03-24',
   },
   {
-    img: mainPoster,
+    img: require('../../assets/images/dimg.jpg'),
     name: 'X-Men: Apocalypse',
     rate: 6.5,
     review: 6.5,
@@ -51,7 +60,7 @@ const dataPopular = [
     date: '2021-03-24',
   },
   {
-    img: mainPoster,
+    img: require('../../assets/images/dimg.jpg'),
     name: 'X-Men: Apocalypse',
     rate: 6.5,
     review: 6.5,
@@ -62,6 +71,7 @@ const dataPopular = [
 
 const Home = memo(() => {
   const navigate = useNavigation();
+  // Seçili filme tıkladığında gidilecek adres
   const showMovie = useCallback(() => {
     navigate.navigate('OnBoarding', {
       IsExplorer: true,
@@ -70,15 +80,15 @@ const Home = memo(() => {
 
   // Render edilmesi gereken ana comp
   const _renderMoviesList = useCallback(
-    ({movie}) => {
+    ({item}) => {
       return (
         <FirstPopularSlide
-          img={movie.img}
-          name={movie.name}
-          rate={movie.rate}
-          review={movie.review}
-          time={movie.time}
-          date={movie.date}
+          img={item.img}
+          name={item.name}
+          rate={item.rate}
+          review={item.review}
+          time={item.time}
+          date={item.date}
           onPress={showMovie}
         />
       );
@@ -95,11 +105,13 @@ const Home = memo(() => {
           showsHorizontalScrollIndicator={false}
           keyExtractor={keyExpo}
           horizontal={true}
+          style={style.popular_cards}
         />
       </View>
     );
   }, [_renderMoviesList]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const renderHeaderContent = useCallback(() => {
     return (
       <View>
@@ -119,6 +131,11 @@ const Home = memo(() => {
             );
           })}
         </Swiper>
+        <View style={style.swiper_text}>
+          <Best />
+        </View>
+        <Text style={style.popular_card_header}>What's Popular</Text>
+        <View>{renderMovies(dataPopular)}</View>
       </View>
     );
   });
@@ -163,8 +180,27 @@ const style = StyleSheet.create({
     width: phoneWidth,
     height: (phoneWidth / 350) * 200,
   },
+  swiper_text: {
+    position: 'absolute',
+    top: 24,
+    right: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   root_flat: {
     paddingBottom: 24,
     backgroundColor: COLORS.white,
+  },
+  popular_card_header: {
+    ...FONTS.h3,
+    color: COLORS.behance,
+    fontWeight: '500',
+    paddingTop: 24,
+    paddingLeft: 16,
+  },
+  popular_cards: {
+    flexWrap: 'wrap',
+    paddingLeft: 16,
+    paddingTop: 16,
   },
 });

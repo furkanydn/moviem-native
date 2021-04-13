@@ -9,7 +9,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {ROUTES} from '../../utils/index';
 
 // Sabitler
 import {images, theme} from '../../constants';

@@ -24,6 +24,7 @@ export const COLORS = {
   navajowhite: '#FFDEAD',
   shadow: '#8D979E',
   dot: '#FFFEFA',
+  behance: '#131418',
 };
 
 export const SIZES = {

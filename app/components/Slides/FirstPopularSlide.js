@@ -4,7 +4,7 @@ import {Clock, Date} from '../../icons';
 import {Rate} from '../index';
 import {COLORS, FONTS} from '../../constants';
 
-interface PopulerProps {
+interface PopularProps {
   img: any;
   name: string;
   rate: number;
@@ -14,10 +14,10 @@ interface PopulerProps {
   onPress: () => void;
 }
 
-const Item = memo((props: PopulerProps) => {
+const Item = memo((props: PopularProps) => {
   return (
     <TouchableOpacity style={styles.container} onPress={props.onPress}>
-      <Image style={styles.image} source={props.img} />
+      <Image resizeMode="contain" style={styles.image} source={props.img} />
       <Text style={styles.textHeaderTitle}>{props.name}</Text>
       <View style={styles.viewRate}>
         <Rate rate={props.rate} />
