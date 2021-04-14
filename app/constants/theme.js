@@ -16,6 +16,7 @@ export const COLORS = {
   forestgreen: '#228B22',
   green: '#008000',
   emerland: '#2ECC71',
+  whatsgreen: '#25D366',
   amethyst: '#9B59B6',
   greensea: '#16A085',
   fluent: '#6B69D6',
@@ -26,6 +27,7 @@ export const COLORS = {
   shadow: '#8D979E',
   dot: '#FFFEFA',
   behance: '#131418',
+  red: '#E81123',
 };
 
 export const SIZES = {

@@ -64,22 +64,23 @@ const styles = StyleSheet.create({
     height: 48,
     fontWeight: '600',
     paddingTop: 4,
-    paddingLeft: 4,
+    paddingLeft: 8,
   },
   viewRate: {
     flexDirection: 'row',
     paddingTop: 8,
+    paddingLeft: 4,
   },
   textReview: {
     ...FONTS.bodyFive,
     fontWeight: '400',
-    paddingLeft: 4,
+    paddingLeft: 8,
   },
   viewFooter: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingVertical: 12,
-    paddingHorizontal: 4,
+    paddingHorizontal: 8,
   },
   flexDirection: {
     flexDirection: 'row',

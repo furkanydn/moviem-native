@@ -9,9 +9,11 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-
+import NetInfo from '@react-native-community/netinfo';
 // Sabitler
 import {images, theme} from '../../constants';
+import Connect from '../../icons/Connect/Connect';
+import {phoneHeight, phoneWidth} from '../../utils/dimens';
 const {onBoardOne, onBoardTwo, onBoardThree} = images;
 
 // Tema Nesneleri
@@ -39,6 +41,13 @@ const onDummyData = [
   },
 ];
 
+const checkConnection = NetInfo.addEventListener(state => {
+  console.log('Connection type', state.type);
+  console.log('Is connected?', state.isConnected);
+  console.log('Is Reachable?', state.isInternetReachable);
+  return state.isConnected;
+});
+
 const OnBoarding = () => {
   const scrollX = new Animated.Value(0);
   const [completed, setCompleted] = React.useState(false);
@@ -49,7 +58,6 @@ const OnBoarding = () => {
       IsExplorer: true,
     });
   }, [navigate]);
-
   // Eğer kullanıcı son sayfaya gelirse
   React.useEffect(() => {
     scrollX.addListener(({value}) => {
@@ -129,11 +137,19 @@ const OnBoarding = () => {
       </View>
     );
   }
-
-  return (
+  return checkConnection ? (
     <SafeAreaView style={styles.container}>
       <View>{renderContent()}</View>
       <View style={styles.dotRootContainer}>{renderDots()}</View>
+    </SafeAreaView>
+  ) : (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.netContainer}>
+        <Connect />
+      </View>
+      <Text style={styles.netDescription}>Sorry, something went wrong.</Text>
+      <Text style={styles.netDescriptionMessage}>Network request failed.</Text>
+      <Text style={styles.netDescription}>Please try again.</Text>
     </SafeAreaView>
   );
 };
@@ -154,6 +170,10 @@ const styles = StyleSheet.create({
     height: SIZES.padding,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  netContainer: {
+    width: phoneWidth - 24,
+    height: phoneHeight / 2,
   },
   dot: {
     height: 8,
@@ -190,6 +210,22 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: COLORS.black,
     marginTop: SIZES.base,
+  },
+  netDescription: {
+    ...FONTS.bodyFour,
+    textAlign: 'center',
+    color: COLORS.black,
+    marginTop: 8,
+  },
+  netDescriptionMessage: {
+    ...FONTS.bodyTwo,
+    backgroundColor: COLORS.whatsgreen,
+    opacity: 0.7,
+    padding: 8,
+    marginTop: 8,
+    borderRadius: 12,
+    textAlign: 'center',
+    color: COLORS.red,
   },
   buttonContainer: {
     position: 'absolute',

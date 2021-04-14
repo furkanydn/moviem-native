@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 // Ekranlar
-import {OnBoarding, Main} from './app/screens';
+import {OnBoarding, Main, NetConnectivity} from './app/screens';
 
 const Stack = createStackNavigator();
 const App = () => {

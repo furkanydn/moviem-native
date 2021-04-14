@@ -1,5 +1,5 @@
 import Rate from './Rate/Rate';
 import RateStar from './RateStar/RateStar';
-import FirstPopularSlide from './Slides/FirstPopularSlide';
+import ItemSlide from './Slides/ItemSlide';
 
-export {Rate, RateStar, FirstPopularSlide};
+export {Rate, RateStar, ItemSlide};

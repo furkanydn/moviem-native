@@ -1,16 +1,17 @@
+// Required main imports
 import React, {memo, useCallback} from 'react';
 import {View, Text, FlatList, Image, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import Swiper from 'react-native-swiper';
-
+// Key Extractor
 import keyExpo from '../../utils/keyExpo';
-
-import {FirstPopularSlide} from '../../components/index';
-
+// Slide object
+import {ItemSlide} from '../../components/index';
+// Required interface imports
 import {images, theme} from '../../constants';
 const {COLORS, FONTS} = theme;
 const {swiperImage} = images;
-
+// Device dimension and svg object
 import {phoneWidth} from '../../utils/dimens';
 import {Best} from '../../icons/index';
 
@@ -82,7 +83,8 @@ const Home = memo(() => {
   const _renderMoviesList = useCallback(
     ({item}) => {
       return (
-        <FirstPopularSlide
+        <ItemSlide
+          // Use backdroppath
           img={item.img}
           name={item.name}
           rate={item.rate}
@@ -134,7 +136,9 @@ const Home = memo(() => {
         <View style={style.swiper_text}>
           <Best />
         </View>
-        <Text style={style.popular_card_header}>What's Popular</Text>
+        <Text style={style.popular_card_header}>
+          What's Popular - Streaming
+        </Text>
         <View>{renderMovies()}</View>
       </View>
     );
