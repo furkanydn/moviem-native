@@ -3,9 +3,7 @@ import Svg, {Path, G, Ellipse} from 'react-native-svg';
 
 function SvgComponent() {
   return (
-    <Svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 500 500">
+    <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
       <Path fill="#e0e0e0" d="M393.7 31.65h65.97v68.77H393.7z" />
       <Path fill="#fafafa" d="M389.23 31.65h65.97v68.77h-65.97z" />
       <Path
