@@ -1,21 +1,8 @@
-import {TextStyle} from 'react-native';
+import {StyleSheet, TextStyle} from 'react-native';
 
-import {phoneHeight} from '../utils/dimension';
+import {phoneHeight} from './dimension';
 import {config} from '../config/config';
 
-interface Typography {
-  headingOne: TextStyle;
-  headingTwo: TextStyle;
-  headingThere: TextStyle;
-  headingFour: TextStyle;
-  headingFive: TextStyle;
-  headingSix: TextStyle;
-  buttonText: TextStyle;
-  buttonContainer: TextStyle;
-  captionOne: TextStyle;
-  captionTwo: TextStyle;
-  captionThere: TextStyle;
-}
 // COLORS
 export const COLORS = {
   black: '#000000',
