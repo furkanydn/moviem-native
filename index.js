@@ -1,5 +1,12 @@
-import {AppRegistry} from 'react-native';
-import App from './App';
-import {name as appName} from './app.json';
+if (__DEV__) {
+  import('./src/configs/reactotron/reactotron');
+  import('./src/configs/reactotron/commands');
+}
 
-AppRegistry.registerComponent(appName, () => App);
+// Uygulama
+import {AppRegistry} from 'react-native';
+
+import {name as appName} from './app.json';
+import AppContainer from './src/AppContainer';
+
+AppRegistry.registerComponent(appName, () => AppContainer);
