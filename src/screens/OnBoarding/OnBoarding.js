@@ -7,4 +7,4 @@ import FastImage from 'react-native-fast-image';
 
 // Page Based Imports
 import {REGISTRATION_URL} from '../../api/urlKEY';
-import {TextView} from '../../components';
+//import {TextView} from '../../components';

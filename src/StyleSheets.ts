@@ -5,7 +5,7 @@ import {config} from './config/config';
 import {THEME} from './utils/theme';
 
 // @ts-ignore
-export const StyleSheet = StyleSheet.create({
+export const StyleSheets = StyleSheet.create({
   displayAreaContainer: {
     flex: 1,
     backgroundColor: THEME.COLORS.background,

@@ -33,3 +33,5 @@ const styles = StyleSheet.create({
     ...getFontStyle(),
   },
 });
+
+export default TextView;
