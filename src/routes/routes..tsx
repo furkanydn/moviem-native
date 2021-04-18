@@ -11,4 +11,4 @@ import {
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 // Uygulama İçi
-import Header from ''
+import {Header} from '../components';

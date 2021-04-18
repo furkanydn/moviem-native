@@ -79,3 +79,5 @@ class TouchableScale extends React.PureComponent<Props, State> {
     );
   }
 }
+
+export default TouchableScale;
