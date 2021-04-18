@@ -7,3 +7,5 @@ import RNBootSplash from 'react-native-bootsplash';
 //Uygulama içi
 import { ToastMessage } from './components/index';
 import { StyleSheets } from './StyleSheets';
+import {startNetworkMonitoring, stopNetworkMonitoring} from "./redux/network/action";
+
