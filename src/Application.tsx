@@ -5,4 +5,5 @@ import {connect} from 'react-redux';
 import RNBootSplash from 'react-native-bootsplash';
 
 //Uygulama içi
-import
+import { ToastMessage } from './components/index';
+import { StyleSheets } from './StyleSheets';
