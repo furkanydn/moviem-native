@@ -6,17 +6,15 @@ import {
   State as GestureState,
 } from 'react-native-gesture-handler';
 import {phoneWidth, phoneHeight} from '../../utils/dimension';
-import {inspect} from 'util';
-import styles = module;
 
 // Yerel Olarak Burada Kullanılacak Bileşenler
-const {add, multi} = Animated;
+const {add, multiply} = Animated;
 const rotateAngle = 30;
 const horizontalThresh = phoneWidth / 3;
 const vertivalThresh = phoneHeight / 4;
 const horizontalSwipeOut = phoneWidth * 1.5;
 const getAnimatedDistance = (dx: Animated.Animated, dy: Animated.Animated) =>
-  add(multi(dx, dx), multi(dy, dy));
+  add(multiply(dx, dx), multiply(dy, dy));
 
 // Bileşenler
 export type SwipeDirect = 'left' | 'right' | 'top';
@@ -68,7 +66,7 @@ class Deck<ItemT> extends React.PureComponent<Props<ItemT>, State> {
   );
 
   onSwipeComplete = (direction: SwipeDirect) => {
-    const {data, onSwipeLeft, onSwipeRight, onSwipeTop, onSwiped} = this.props;
+    const {data, onSwipeLeft, onSwipeRight, onSwipeTop, onSwipe} = this.props;
     const swipeFunction =
       direction === 'left'
         ? onSwipeLeft
@@ -77,7 +75,7 @@ class Deck<ItemT> extends React.PureComponent<Props<ItemT>, State> {
         : onSwipeTop;
     const item = data[0];
 
-    onSwiped && onSwiped(item);
+    onSwipe && onSwipe(item);
     swipeFunction && swipeFunction(item);
     this.drag.setValue({x: 0, y: 0});
   };
@@ -257,3 +255,5 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
   },
 });
+
+export default Deck;
