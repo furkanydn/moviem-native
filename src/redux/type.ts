@@ -1,5 +1,4 @@
-import {AuthAction} from './auth/action';
-import {Explore} from './explore/action';
+import {AuthAction, Explore, Movies, Search} from './index';
 
 export interface WithCallback {
   Sucsess?: () => void;

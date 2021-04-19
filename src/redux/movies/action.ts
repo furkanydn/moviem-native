@@ -115,7 +115,7 @@ export interface FilterUnusedMovieData
   extends ReturnType<typeof filterUnusedMovieData> {}
 
 // Hazırlanan Bileşenlerin Kalıtımla Erişim Bileşenleştirilmesi
-export type Movie =
+export type Movies =
   | AddMovie
   | FetchMovieAccountStateRequest
   | FetchMovieAccountStateSuccess
