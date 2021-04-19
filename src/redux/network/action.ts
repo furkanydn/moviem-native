@@ -1,6 +1,6 @@
 import {NetInfoState} from '@react-native-community/netinfo';
 import {AnyAction} from 'redux';
-import * as networkConst from './constans';
+import * as networkConst from './constants';
 import {ReDispatchConfig} from './type';
 
 // Dışarıya Aktarılacak İzleme Bileşenleri
