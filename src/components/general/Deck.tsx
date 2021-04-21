@@ -18,6 +18,7 @@ const getAnimatedDistance = (dx: Animated.Animated, dy: Animated.Animated) =>
 
 // Bileşenler
 export type SwipeDirect = 'left' | 'right' | 'top';
+
 export interface SwipeThresh {
   toLeft: Animated.Animated;
   toRight: Animated.Animated;
