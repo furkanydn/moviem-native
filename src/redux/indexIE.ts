@@ -1,4 +1,4 @@
-import {MovieID} from './movies/type';
+import {Movie,MovieID} from './movies/type';
 import {SocialAction} from './explore/type';
 
 import {AuthAction} from './auth/action';
@@ -8,6 +8,7 @@ import {Search} from './search/action';
 import {NetworkActions} from './network/action';
 
 import authReducer from './auth/reducer';
+import exploreReducer from './explore/reducer';
 
 import {AfterRehydrate} from './rehydrate/action';
 import {AFTER_REHYDRATE} from './rehydrate/constants';
@@ -15,9 +16,10 @@ import {AFTER_REHYDRATE} from './rehydrate/constants';
 // For reducer
 export {
   // Type
+  Movie,
   MovieID,
-  SocialAction,
   // Actions
+  SocialAction,
   AuthAction,
   Explore,
   Movies,
@@ -28,4 +30,5 @@ export {
   AFTER_REHYDRATE,
   // Reducers
   authReducer,
+  exploreReducer,
 };

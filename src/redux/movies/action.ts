@@ -22,7 +22,7 @@ export const fetchMovieAccountStateRequest = (
   };
 
 export const fetchMovieAccountStateSuccess = (
-  params: MovieIDParam & {favorite: boolean; wathclist: boolean},
+  params: MovieIDParam & {favorite: boolean; watchlist: boolean},
 ) =>
   <const>{
     type: movieConst.FETCH_MOVIE_ACCOUNT_STATE_SUCCESS,

@@ -5,4 +5,4 @@ import {PersistPartial} from 'redux-persist/es/persistReducer';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 //
-import {authReducer} from './indexIE';
+import {authReducer,exploreReducer} from './indexIE';
