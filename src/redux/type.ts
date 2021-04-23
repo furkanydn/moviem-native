@@ -1,5 +1,26 @@
-import {AuthAction, Explore, Movies, Search, NetworkActions} from './indexIE';
+import {
+  AuthAction,
+  Explore,
+  Movies,
+  Search,
+  NetworkActions,
+  Rehydrates,
+  SectionAction,
+  persistedReducer,
+} from './indexIE';
 
+// Durum Bileşenleri
+export type RootAction =
+  | AuthAction
+  | Explore
+  | Movies
+  | Search
+  | NetworkActions
+  | Rehydrates
+  | SectionAction;
+export type RootState = ReturnType<typeof persistedReducer>
+
+// Farklı İstekler ve Geri Dönüşler İçin
 export interface WithCallback {
   Sucsess?: () => void;
   Error?: () => void;
