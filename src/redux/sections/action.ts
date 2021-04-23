@@ -21,7 +21,7 @@ export const refreshSectionSuccess = (param: SectionSuccessFetchParam) =>
 export const fetchSectionNextPageRequest = (sectionKey: SectionKeys) =>
   <const>{type: sectionConst.FETCH_SECTION_NEXT_PAGE_REQUEST, sectionKey};
 export const fetchSectionNextPageSuccess = (param: SectionSuccessFetchParam) =>
-  <const>{type: sectionConst.FETCH_SECTION_NEXT_PAGE_SUCCESS, param};
+  <const>{type: sectionConst.FETCH_SECTION_NEXT_PAGE_SUCCESS, ...param};
 export const fetchSectionNextPage = (sectionKey: SectionKeys) =>
   <const>{
     type: sectionConst.FETCH_SECTION_NEXT_PAGE,
