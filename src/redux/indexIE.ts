@@ -11,9 +11,12 @@ import authReducer from './auth/reducer';
 import exploreReducer from './explore/reducer';
 import movieReducer from './movies/reducer';
 import searchReducer from './search/reducer';
+import networkReducer from './network/reducer';
 
 import {AfterRehydrate} from './rehydrate/action';
 import {AFTER_REHYDRATE} from './rehydrate/constants';
+
+import {isNetworkError, isServerError} from '../utils/network';
 
 // For reducer
 export {
@@ -35,4 +38,8 @@ export {
   exploreReducer,
   movieReducer,
   searchReducer,
+  networkReducer,
+  // Network Utils
+  isNetworkError,
+  isServerError,
 };
