@@ -11,5 +11,6 @@ import {
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 // Uygulama İçi
-import {Header, NavigateButtonWrapper, NavigationWrapper} from '../components';
 import {config} from '../config/config';
+import {Header, NavigateButtonWrapper, NavigationWrapper} from '../components';
+import {ExploreIcon,HomeIcon,VideoFolderIcon} from '../icons';
