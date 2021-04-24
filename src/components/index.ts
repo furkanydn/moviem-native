@@ -5,6 +5,7 @@ import Header from './general/Header';
 import NavigateButtonWrapper from './general/NavigateButtonWrapper';
 import Deck from './general/Deck';
 import {SwipeDirect} from './general/Deck';
+import NavigationWrapper from './general/NavigateWrapper';
 
 export {
   TextView,
@@ -14,4 +15,5 @@ export {
   NavigateButtonWrapper,
   Deck,
   SwipeDirect,
+  NavigationWrapper,
 };

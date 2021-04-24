@@ -102,7 +102,7 @@ const fetchSectionNextPage = (
 };
 
 // Bileşenleri Dışarıya Aktarılması
-const moviesReducer = (
+const sectionReducer = (
   state: SectionState | undefined = initState,
   action: SectionAction,
 ): SectionState => {
@@ -120,4 +120,4 @@ const moviesReducer = (
   }
 };
 
-export default moviesReducer;
+export default sectionReducer;

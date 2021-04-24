@@ -68,7 +68,7 @@ export const THEME = {
     get fullHeight() {
       return phoneHeight + this.statusBarHeight;
     },
-    smallICON: 20,
+    smallICON: 24,
     mediumICON: 32,
     largeICON: 48,
     hugeICON: 96,

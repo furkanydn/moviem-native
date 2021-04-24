@@ -18,7 +18,8 @@ export type RootAction =
   | NetworkActions
   | Rehydrates
   | SectionAction;
-export type RootState = ReturnType<typeof persistedReducer>
+
+export type RootState = ReturnType<typeof persistedReducer>;
 
 // Farklı İstekler ve Geri Dönüşler İçin
 export interface WithCallback {

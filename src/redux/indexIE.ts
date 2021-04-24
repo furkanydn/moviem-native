@@ -1,5 +1,6 @@
 import {Movie, MovieID} from './movies/type';
 import {SocialAction} from './explore/type';
+import {RootState, RootAction} from './type';
 
 import {AuthAction} from './auth/action';
 import {Explore} from './explore/action';
@@ -14,6 +15,7 @@ import exploreReducer from './explore/reducer';
 import movieReducer from './movies/reducer';
 import searchReducer from './search/reducer';
 import networkReducer from './network/reducer';
+import sectionReducer from './sections/reducer';
 import {persistedReducer} from './reducer';
 
 import {AfterRehydrate} from './rehydrate/action';
@@ -21,11 +23,20 @@ import {AFTER_REHYDRATE} from './rehydrate/constants';
 
 import {isNetworkError, isServerError} from '../utils/network';
 
+import {
+  networkConnectedSelect,
+  isInternetReachableSelect,
+  networkIpAddressSelect,
+  failedNetworkRequestQueueSelect,
+} from './network/selector';
+
 // For reducer
 export {
   // Type
   Movie,
   MovieID,
+  RootState,
+  RootAction,
   // Actions
   SocialAction,
   AuthAction,
@@ -44,8 +55,14 @@ export {
   movieReducer,
   searchReducer,
   networkReducer,
+  sectionReducer,
   persistedReducer,
   // Network Utils
   isNetworkError,
   isServerError,
+  // Network Selectors
+  networkConnectedSelect,
+  isInternetReachableSelect,
+  networkIpAddressSelect,
+  failedNetworkRequestQueueSelect,
 };

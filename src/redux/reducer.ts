@@ -10,6 +10,7 @@ import {
   movieReducer,
   searchReducer,
   networkReducer,
+  sectionReducer,
 } from './indexIE';
 
 // Bileşenler
@@ -19,6 +20,7 @@ const reducers = {
   movies: movieReducer,
   network: networkReducer,
   search: searchReducer,
+  sections: sectionReducer,
 };
 
 const combineReducer = combineReducers(reducers);
@@ -75,6 +77,5 @@ const logOutReducer = (
 export const rootReducer = (inputState: RootState, action: RootAction) => {
   const state = logOutReducer(inputState, action);
 
-  // @ts-ignore
   return persistedReducer(state, action);
 };
