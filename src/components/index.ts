@@ -6,6 +6,8 @@ import NavigateButtonWrapper from './general/NavigateButtonWrapper';
 import Deck from './general/Deck';
 import {SwipeDirect} from './general/Deck';
 import NavigationWrapper from './general/NavigateWrapper';
+import Spinner from './in-app/Spinner';
+import PriButton from './in-app/PriButton';
 
 export {
   TextView,
@@ -16,4 +18,6 @@ export {
   Deck,
   SwipeDirect,
   NavigationWrapper,
+  Spinner,
+  PriButton,
 };
