@@ -44,6 +44,7 @@ const COLORS = {
   emerland: '#2ecc71',
   forestgreen: '#228B22',
   green: '#008000',
+  focys: 'rgba(250,250,250,0.5)',
 
   success: '#28a745',
   danger: '#dc3545',

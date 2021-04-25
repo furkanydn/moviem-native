@@ -1,15 +1,14 @@
-// @ts-ignore
 import {StyleSheet} from 'react-native';
 
 import {config} from './config/config';
 import {THEME} from './utils/theme';
 
-// @ts-ignore
 export const StyleSheets = StyleSheet.create({
   displayAreaContainer: {
     flex: 1,
     backgroundColor: THEME.COLORS.background,
   },
+  emptyStyle: {},
   flexContainer: {
     flex: 1,
   },

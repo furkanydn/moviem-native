@@ -8,6 +8,9 @@ import {SwipeDirect} from './general/Deck';
 import NavigationWrapper from './general/NavigateWrapper';
 import Spinner from './in-app/Spinner';
 import PriButton from './in-app/PriButton';
+import TextButton from './in-app/TextButton';
+import LoginInput from './general/LoginInput';
+import Wrapper from './general/Wrapper';
 
 export {
   TextView,
@@ -20,4 +23,7 @@ export {
   NavigationWrapper,
   Spinner,
   PriButton,
+  TextButton,
+  LoginInput,
+  Wrapper,
 };
