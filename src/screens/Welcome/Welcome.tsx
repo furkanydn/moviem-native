@@ -5,6 +5,6 @@ import {NavigationStackScreenProps} from '@react-navigation/stack';
 import {connect} from 'react-redux';
 import FastImage from 'react-native-fast-image';
 
-// Bizim Yazıd
+// Yazılan Bileşenleri İçeri Aktarma
 import {REGISTRATION_URL} from '../../api/urlKEY';
 //import {TextView} from '../../components';
