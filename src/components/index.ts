@@ -12,6 +12,8 @@ import TextButton from './in-app/TextButton';
 import LoginInput from './general/LoginInput';
 import Wrapper from './general/Wrapper';
 import SecButton from './in-app/SecButton';
+import {withDelayLoading} from './hoist/withDelayLoading';
+import ImgOpacityCycle from './general/ImgOpacityCycle';
 
 export {
   TextView,
@@ -28,4 +30,6 @@ export {
   LoginInput,
   Wrapper,
   SecButton,
+  withDelayLoading,
+  ImgOpacityCycle,
 };
