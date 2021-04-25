@@ -42,6 +42,7 @@ const COLORS = {
   transparentWhiteThree: 'rgba(255,255,255,0.2)',
   transparentWhiteFour: 'rgba(255,255,255,0.1)',
   emerland: '#2ecc71',
+  clemerland: '#00af60',
   forestgreen: '#228B22',
   green: '#008000',
   focys: 'rgba(250,250,250,0.5)',

@@ -7,4 +7,4 @@ import FastImage from 'react-native-fast-image';
 
 // Yazılan Bileşenleri İçeri Aktarma
 import {REGISTRATION_URL} from '../../api/urlKEY';
-//import {TextView} from '../../components';
+import {TextView, TextButton, PriButton, SecButton,Spinner} from '../../components';

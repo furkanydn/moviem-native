@@ -17,7 +17,7 @@ type OwnProps = {
 
 type Props = OwnProps & TouchableScaleProps;
 
-export type PriButton = Props;
+export type PriButtonProps = Props;
 
 // Bileşenler
 const PriButton: React.FC<Props> = props => {

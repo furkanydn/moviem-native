@@ -11,6 +11,7 @@ import PriButton from './in-app/PriButton';
 import TextButton from './in-app/TextButton';
 import LoginInput from './general/LoginInput';
 import Wrapper from './general/Wrapper';
+import SecButton from './in-app/SecButton';
 
 export {
   TextView,
@@ -26,4 +27,5 @@ export {
   TextButton,
   LoginInput,
   Wrapper,
+  SecButton,
 };
