@@ -43,6 +43,8 @@ import {
   failedNetworkRequestQueueSelect,
 } from './network/selector';
 
+import { getMovieSelectByID } from "./movies/selector";
+
 // For reducer
 export {
   // Type
@@ -90,4 +92,5 @@ export {
   SectionKeys,
   sectionData,
   getSectionSelectByKey,
+  getMovieSelectByID,
 };

@@ -12,4 +12,4 @@ import {MovieID} from '../../redux/indexIE';
 import {THEME} from '../../utils/theme';
 import {movieIDsKeyExtract} from '../../utils/movie';
 import Footer from '../general/Footer';
-import
+import Info from '../general/Info';
