@@ -1,4 +1,11 @@
-import {Movie, MovieID} from './movies/type';
+import {
+  Movie,
+  MovieID,
+  MovieRequiredPropKey,
+  MovieStoreProps,
+  NormalizeMovieProps,
+  ParsedMovie,
+} from './movies/type';
 import {SocialAction} from './explore/type';
 import {RootState, RootAction} from './type';
 
@@ -27,7 +34,7 @@ import {refreshSectionRequest, refreshSectionSuccess} from './sections/action';
 import {browseSectionKey} from './sections/sectionData';
 import {SectionKeys} from './sections/type';
 import {sectionData} from './sections/sectionData';
-import {get}
+import {getSectionSelectByKey} from './sections/selector';
 
 import {
   networkConnectedSelect,
@@ -43,6 +50,10 @@ export {
   MovieID,
   RootState,
   RootAction,
+  MovieRequiredPropKey,
+  MovieStoreProps,
+  NormalizeMovieProps,
+  ParsedMovie,
   // Actions
   SocialAction,
   AuthAction,
@@ -76,7 +87,7 @@ export {
   refreshSectionSuccess,
   //
   browseSectionKey,
-  //
   SectionKeys,
   sectionData,
+  getSectionSelectByKey,
 };

@@ -3,8 +3,8 @@ export const routeName = {
   AuthStack: 'AuthStack',
   HomeStack: 'HomeStack',
 
-  AuthWelcome: 'AuthWelcome',
-  AuthLogin: 'AuthLogin',
+  AuthWelcome: 'Welcome',
+  AuthLogin: 'Login',
 
   Settings: 'Settings',
   SectionListScreen: 'SectionListScreen',
