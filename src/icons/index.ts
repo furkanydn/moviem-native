@@ -3,5 +3,17 @@ import HomeIcon from './Home/Home';
 import ExploreIcon from './Explore/ExploreIcon';
 import VideoFolderIcon from './VideoFolder/VideoFolderIcon';
 import MovieEmpty from './MovieEmpty/MovieEmpty';
+import {Favorite} from './Favorite/Favorite';
+import {Watchlist} from './Watchlist/Watchlist';
+import {MovieI} from './MovieImdb/MovieI';
 
-export {ChevronLeft, HomeIcon, ExploreIcon, VideoFolderIcon, MovieEmpty};
+export {
+  ChevronLeft,
+  HomeIcon,
+  ExploreIcon,
+  VideoFolderIcon,
+  MovieEmpty,
+  Favorite,
+  Watchlist,
+  MovieI,
+};

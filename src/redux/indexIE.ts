@@ -43,7 +43,13 @@ import {
   failedNetworkRequestQueueSelect,
 } from './network/selector';
 
-import { getMovieSelectByID } from "./movies/selector";
+import {getMovieSelectByID} from './movies/selector';
+
+import {
+  changeMovieStatusRequest,
+  changeMovieStatusSuccess,
+  changeMovieStatusFail,
+} from './movies/action';
 
 // For reducer
 export {
@@ -66,6 +72,10 @@ export {
   Rehydrates,
   AfterRehydrate,
   SectionAction,
+  //Subactions
+  changeMovieStatusRequest,
+  changeMovieStatusSuccess,
+  changeMovieStatusFail,
   //Constants
   AFTER_REHYDRATE,
   // Reducers

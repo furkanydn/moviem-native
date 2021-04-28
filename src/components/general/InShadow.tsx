@@ -99,3 +99,5 @@ const styles = StyleSheet.create({
   left: {right: undefined},
   right: {left: undefined},
 });
+
+export default InShadow;
