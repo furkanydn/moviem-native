@@ -18,6 +18,9 @@ import TouchableHighView, {
   TouchableHighViewProps,
 } from './general/TouchableHighView';
 import ImageButton from './general/ImageButton';
+import DetailButton from './movie/DetailButton';
+import Genres from './movie/Genres';
+import Backdrop from './movie/Backdrop';
 
 export {
   TextView,
@@ -39,4 +42,7 @@ export {
   TouchableHighView,
   TouchableHighViewProps,
   ImageButton,
+  DetailButton,
+  Genres,
+  Backdrop,
 };
