@@ -26,6 +26,11 @@ import UserScore from './movie/UserScore';
 import ScoreYear from './movie/ScoreYear';
 import HorizontalFlatList from './movie/HorizontalFlatList';
 import Detail from './movie/Detail';
+import Footer from './general/Footer';
+import Info from './general/Info';
+import InlinePreview from './general/InlinePreview';
+import List from './movie/List';
+import AuthLock from './general/AuthLock';
 
 export {
   TextView,
@@ -56,4 +61,9 @@ export {
   ScoreYear,
   HorizontalFlatList,
   Detail,
+  Footer,
+  Info,
+  InlinePreview,
+  List,
+  AuthLock,
 };

@@ -30,7 +30,11 @@ import {AFTER_REHYDRATE} from './rehydrate/constants';
 
 import {isNetworkError, isServerError} from '../utils/network';
 
-import {refreshSectionRequest, refreshSectionSuccess} from './sections/action';
+import {
+  refreshSectionRequest,
+  refreshSectionSuccess,
+  fetchSectionNextPageRequest,
+} from './sections/action';
 import {browseSectionKey} from './sections/sectionData';
 import {SectionKeys} from './sections/type';
 import {sectionData} from './sections/sectionData';
@@ -105,6 +109,7 @@ export {
   //
   refreshSectionRequest,
   refreshSectionSuccess,
+  fetchSectionNextPageRequest,
   //
   browseSectionKey,
   SectionKeys,
