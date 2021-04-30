@@ -22,6 +22,10 @@ import DetailButton from './movie/DetailButton';
 import Genres from './movie/Genres';
 import Backdrop from './movie/Backdrop';
 import Preview, {getMoviePreHeight} from './movie/Preview';
+import UserScore from './movie/UserScore';
+import ScoreYear from './movie/ScoreYear';
+import HorizontalFlatList from './movie/HorizontalFlatList';
+import Detail from './movie/Detail';
 
 export {
   TextView,
@@ -48,4 +52,8 @@ export {
   Backdrop,
   Preview,
   getMoviePreHeight,
+  UserScore,
+  ScoreYear,
+  HorizontalFlatList,
+  Detail,
 };
