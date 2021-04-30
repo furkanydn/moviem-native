@@ -14,6 +14,10 @@ import Wrapper from './general/Wrapper';
 import SecButton from './in-app/SecButton';
 import {withDelayLoading} from './hoist/withDelayLoading';
 import ImgOpacityCycle from './general/ImgOpacityCycle';
+import TouchableHighView, {
+  TouchableHighViewProps,
+} from './general/TouchableHighView';
+import ImageButton from './general/ImageButton';
 
 export {
   TextView,
@@ -32,4 +36,7 @@ export {
   SecButton,
   withDelayLoading,
   ImgOpacityCycle,
+  TouchableHighView,
+  TouchableHighViewProps,
+  ImageButton,
 };
