@@ -49,7 +49,15 @@ import {
   changeMovieStatusRequest,
   changeMovieStatusSuccess,
   changeMovieStatusFail,
+  fetchMovieDetailedRequest,
+  fetchMovieDetailedSuccess,
+  fetchMovieAccountStateRequest,
+  fetchMovieAccountStateSuccess,
+  fetchMovieRecommendationsRequest,
+  fetchMovieRecommendationsSuccess,
 } from './movies/action';
+
+import {isGuestUserSelect} from './auth/selector';
 
 // For reducer
 export {
@@ -103,4 +111,11 @@ export {
   sectionData,
   getSectionSelectByKey,
   getMovieSelectByID,
+  isGuestUserSelect,
+  fetchMovieDetailedRequest,
+  fetchMovieDetailedSuccess,
+  fetchMovieAccountStateRequest,
+  fetchMovieAccountStateSuccess,
+  fetchMovieRecommendationsRequest,
+  fetchMovieRecommendationsSuccess,
 };
