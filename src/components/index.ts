@@ -21,6 +21,7 @@ import ImageButton from './general/ImageButton';
 import DetailButton from './movie/DetailButton';
 import Genres from './movie/Genres';
 import Backdrop from './movie/Backdrop';
+import Preview, {getMoviePreHeight} from './movie/Preview';
 
 export {
   TextView,
@@ -45,4 +46,6 @@ export {
   DetailButton,
   Genres,
   Backdrop,
+  Preview,
+  getMoviePreHeight,
 };

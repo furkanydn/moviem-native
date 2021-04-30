@@ -4,5 +4,5 @@ import Animated from 'react-native-reanimated';
 //
 import {Movie} from '../../redux/indexIE';
 import {THEME} from '../../utils/theme';
-import {TextView, Backdrop, DetailButton, Genres} from '../index';
+import {TextView, Backdrop, DetailButton, Genres, getMoviePreHeight} from '../index';
 
