@@ -38,6 +38,8 @@ import CardImage from './movie/CardImage';
 import Card from './movie/Card';
 import Label from './movie/Label';
 import CardLabel from './movie/CardLabel';
+import MDeck from './movie/MDeck';
+import EMovieDeck from './movie/EMovieDeck';
 
 export {
   TextView,
@@ -83,4 +85,6 @@ export {
   Card,
   Label,
   CardLabel,
+  MDeck,
+  EMovieDeck,
 };

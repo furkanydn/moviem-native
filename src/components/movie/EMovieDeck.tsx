@@ -7,7 +7,7 @@ import {
   exploreSwiped,
   exploreMovieLoadPosterSelect,
 } from '../../redux/indexIE';
-import {Deck} from '../index';
+import {MDeck} from '../index';
 
 // Durum ve Özellikler
 const MapStateProps = (state: RootState) => ({
@@ -48,6 +48,19 @@ class EMovieDeck extends React.PureComponent<Props> {
 
   render() {
     const {movieIDs} = this.props;
-    return <></>;
+
+    return (
+      <>
+        <MDeck
+          movieIDs={movieIDs}
+          swipeTop={this.swipeTop}
+          swipeLeft={this.swipeLeft}
+          swipeRight={this.swipeRight}
+        />
+        <NavigationEvents onDidFocus={this.didFocus} />
+      </>
+    );
   }
 }
+
+export default connect(MapStateProps, MapDispatchProps)(EMovieDeck);

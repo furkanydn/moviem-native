@@ -69,7 +69,17 @@ import {
   fetchMovieRecommendationsSuccess,
 } from './movies/action';
 
-import {isGuestUserSelect} from './auth/selector';
+import {
+  isGuestUserSelect,
+  isAuthUserSelect,
+  accountIDSelect,
+  userIDParamsSelect,
+  createGuestSessionPendingSelect,
+  createAuthSessionErrorSelect,
+  createAuthSessionPendingSelect,
+  sessionIDSelect,
+  createGuestSessionErrorSelect,
+} from './auth/selector';
 
 import {
   exploreStateSelect,
@@ -135,6 +145,14 @@ export {
   getSectionSelectByKey,
   getMovieSelectByID,
   isGuestUserSelect,
+  isAuthUserSelect,
+  accountIDSelect,
+  userIDParamsSelect,
+  createGuestSessionPendingSelect,
+  createAuthSessionErrorSelect,
+  createAuthSessionPendingSelect,
+  sessionIDSelect,
+  createGuestSessionErrorSelect,
   fetchMovieDetailedRequest,
   fetchMovieDetailedSuccess,
   fetchMovieAccountStateRequest,
