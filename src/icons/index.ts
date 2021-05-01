@@ -6,6 +6,7 @@ import MovieEmpty from './MovieEmpty/MovieEmpty';
 import {Favorite} from './Favorite/Favorite';
 import {Watchlist} from './Watchlist/Watchlist';
 import {MovieI} from './MovieImdb/MovieI';
+import User from './User/User';
 
 export {
   ChevronLeft,
@@ -16,4 +17,5 @@ export {
   Favorite,
   Watchlist,
   MovieI,
+  User,
 };

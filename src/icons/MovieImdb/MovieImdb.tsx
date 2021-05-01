@@ -2,7 +2,7 @@ import * as React from 'react';
 import Svg, {Path, G} from 'react-native-svg';
 import {THEME} from '../../utils/theme';
 
-function SvgComponent() {
+function MovieImdb() {
   return (
     <Svg
       width={THEME.specification.mediumICON}
@@ -20,5 +20,4 @@ function SvgComponent() {
   );
 }
 
-const MovieImdb = React.memo(SvgComponent);
 export default MovieImdb;

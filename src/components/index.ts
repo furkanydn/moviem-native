@@ -3,8 +3,7 @@ import ToastMessage from './general/ToastMessage';
 import TouchableScale from './general/TouchableScale';
 import Header from './general/Header';
 import NavigateButtonWrapper from './general/NavigateButtonWrapper';
-import Deck from './general/Deck';
-import {SwipeDirect} from './general/Deck';
+import Deck, {RenderCardParams, SwipeThresh, SwipeDirect} from './general/Deck';
 import NavigationWrapper from './general/NavigateWrapper';
 import Spinner from './in-app/Spinner';
 import PriButton from './in-app/PriButton';
@@ -31,6 +30,14 @@ import Info from './general/Info';
 import InlinePreview from './general/InlinePreview';
 import List from './movie/List';
 import AuthLock from './general/AuthLock';
+import StatusBar from './general/StatusBar';
+import InfoGuest from './general/InfoGuest';
+import CircleLoading from './general/CircleLoading';
+import InShadow from './general/InShadow';
+import CardImage from './movie/CardImage';
+import Card from './movie/Card';
+import Label from './movie/Label';
+import CardLabel from './movie/CardLabel';
 
 export {
   TextView,
@@ -39,7 +46,9 @@ export {
   Header,
   NavigateButtonWrapper,
   Deck,
+  RenderCardParams,
   SwipeDirect,
+  SwipeThresh,
   NavigationWrapper,
   Spinner,
   PriButton,
@@ -66,4 +75,12 @@ export {
   InlinePreview,
   List,
   AuthLock,
+  StatusBar,
+  InfoGuest,
+  CircleLoading,
+  InShadow,
+  CardImage,
+  Card,
+  Label,
+  CardLabel,
 };

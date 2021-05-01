@@ -2,7 +2,7 @@ import * as React from 'react';
 import Svg, {Path} from 'react-native-svg';
 import {THEME} from '../../utils/theme';
 
-function SvgComponent() {
+function VideoFolderIcon() {
   return (
     <Svg
       width={THEME.specification.smallICON}
@@ -25,5 +25,4 @@ function SvgComponent() {
   );
 }
 
-const VideoFolderIcon = React.memo(SvgComponent);
 export default VideoFolderIcon;

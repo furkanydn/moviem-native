@@ -2,7 +2,7 @@ import * as React from 'react';
 import Svg, {Circle, Path} from 'react-native-svg';
 import {THEME} from '../../utils/theme';
 
-function SvgComponent() {
+function ExploreIcon() {
   return (
     <Svg
       width={THEME.specification.smallICON}
@@ -33,5 +33,4 @@ function SvgComponent() {
   );
 }
 
-const ExploreIcon = React.memo(SvgComponent);
 export default ExploreIcon;

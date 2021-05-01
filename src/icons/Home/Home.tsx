@@ -2,7 +2,7 @@ import * as React from 'react';
 import Svg, {Path} from 'react-native-svg';
 import {THEME} from '../../utils/theme';
 
-function SvgComponent() {
+function HomeIcon() {
   return (
     <Svg
       width={THEME.specification.smallICON}
@@ -19,5 +19,4 @@ function SvgComponent() {
   );
 }
 
-const HomeIcon = React.memo(SvgComponent);
 export default HomeIcon;

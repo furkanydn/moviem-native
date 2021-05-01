@@ -10,7 +10,15 @@ import {SocialAction} from './explore/type';
 import {RootState, RootAction} from './type';
 
 import {AuthAction} from './auth/action';
-import {Explore} from './explore/action';
+import {
+  Explore,
+  exploreLoadRequest,
+  exploreLoadSuccess,
+  exploreResolved,
+  exploreSwiped,
+  exploreMovieLoad,
+  explorePosterLoaded,
+} from './explore/action';
 import {Movies} from './movies/action';
 import {Search} from './search/action';
 import {NetworkActions} from './network/action';
@@ -62,6 +70,16 @@ import {
 } from './movies/action';
 
 import {isGuestUserSelect} from './auth/selector';
+
+import {
+  exploreStateSelect,
+  exploreMovieIdsSelect,
+  loadPosterMovieSelect,
+  exploreMovieLoadPosterSelect,
+  exploredSeenMapSelect,
+  exploredActionQueueSelect,
+  isExploreLoadSelect,
+} from './explore/selector';
 
 // For reducer
 export {
@@ -123,4 +141,19 @@ export {
   fetchMovieAccountStateSuccess,
   fetchMovieRecommendationsRequest,
   fetchMovieRecommendationsSuccess,
+  //
+  exploreLoadRequest,
+  exploreLoadSuccess,
+  exploreSwiped,
+  exploreResolved,
+  exploreMovieLoad,
+  explorePosterLoaded,
+  //
+  exploreStateSelect,
+  exploreMovieIdsSelect,
+  loadPosterMovieSelect,
+  exploreMovieLoadPosterSelect,
+  exploredSeenMapSelect,
+  exploredActionQueueSelect,
+  isExploreLoadSelect,
 };

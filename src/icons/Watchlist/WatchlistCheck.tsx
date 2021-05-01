@@ -2,7 +2,7 @@ import * as React from 'react';
 import Svg, {Path} from 'react-native-svg';
 import {THEME} from '../../utils/theme';
 
-function SvgComponent() {
+function WatchlistCheck() {
   return (
     <Svg
       width={THEME.specification.mediumICON}
@@ -19,5 +19,4 @@ function SvgComponent() {
   );
 }
 
-const WatchlistCheck = React.memo(SvgComponent);
 export default WatchlistCheck;

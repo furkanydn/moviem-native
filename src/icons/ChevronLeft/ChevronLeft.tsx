@@ -2,7 +2,7 @@ import * as React from 'react';
 import Svg, {Path} from 'react-native-svg';
 import {THEME} from '../../utils/theme';
 
-function SvgComponent() {
+function ChevronLeft() {
   return (
     <Svg
       width={THEME.specification.mediumICON}
@@ -25,5 +25,4 @@ function SvgComponent() {
   );
 }
 
-const ChevronLeft = React.memo(SvgComponent);
 export default ChevronLeft;

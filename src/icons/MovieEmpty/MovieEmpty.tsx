@@ -2,7 +2,7 @@ import * as React from 'react';
 import Svg, {Path, G} from 'react-native-svg';
 import {THEME} from '../../utils/theme';
 
-function SvgComponent() {
+function MovieEmpty() {
   return (
     <Svg
       width={THEME.specification.hugeICON}
@@ -40,5 +40,4 @@ function SvgComponent() {
   );
 }
 
-const MovieEmpty = React.memo(SvgComponent);
 export default MovieEmpty;
