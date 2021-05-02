@@ -9,6 +9,9 @@ import {MovieI} from './MovieImdb/MovieI';
 import User from './User/User';
 import Alert from './Alert/Alert';
 import Search from './Search/Search';
+import {Back} from './Back/Back';
+import {Close} from './Close/Close';
+import SearchDark from './SearchDark/SearchDark';
 
 export {
   ChevronLeft,
@@ -22,4 +25,7 @@ export {
   User,
   Alert,
   Search,
+  Back,
+  Close,
+  SearchDark,
 };
