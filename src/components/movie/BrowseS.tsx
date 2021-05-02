@@ -18,7 +18,7 @@ type ReduxProps = ReturnType<typeof MapStateProps> & typeof MapDispatchProps;
 type Props = ReduxProps;
 
 // Bileşen
-class Browse extends React.PureComponent<Props> {
+class BrowseS extends React.PureComponent<Props> {
   fetchDataS = () => {
     const {refreshSectionRequest} = this.props;
     browseSectionKey.map(sectionKey => {
@@ -53,4 +53,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(MapStateProps, MapDispatchProps)(Browse);
+export default connect(MapStateProps, MapDispatchProps)(BrowseS);

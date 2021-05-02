@@ -8,7 +8,7 @@ import {Watchlist} from './Watchlist/Watchlist';
 import {MovieI} from './MovieImdb/MovieI';
 import User from './User/User';
 import Alert from './Alert/Alert';
-import Search from './Search/Search';
+import SearchI from './Search/SearchI';
 import {Back} from './Back/Back';
 import {Close} from './Close/Close';
 import SearchDark from './SearchDark/SearchDark';
@@ -24,7 +24,7 @@ export {
   MovieI,
   User,
   Alert,
-  Search,
+  SearchI,
   Back,
   Close,
   SearchDark,

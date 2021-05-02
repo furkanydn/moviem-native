@@ -2,7 +2,7 @@ import * as React from 'react';
 import Svg, {Path} from 'react-native-svg';
 import {THEME} from '../../utils/theme';
 
-function Search() {
+function SearchI() {
   return (
     <Svg
       width={THEME.specification.hugeICON}
@@ -37,4 +37,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default SearchI;

@@ -41,7 +41,9 @@ import CardLabel from './movie/CardLabel';
 import MDeck from './movie/MDeck';
 import EMovieDeck from './movie/EMovieDeck';
 import HorizontalScroll from './general/HorizontalScroll';
-import Browse from './movie/Browse';
+import BrowseS from './movie/BrowseS';
+import Search from './in-app/Search';
+import BrowseWrapper from './movie/BrowseWrapper';
 
 export {
   TextView,
@@ -90,5 +92,7 @@ export {
   MDeck,
   EMovieDeck,
   HorizontalScroll,
-  Browse,
+  BrowseS,
+  Search,
+  BrowseWrapper,
 };
