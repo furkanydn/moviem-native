@@ -7,6 +7,8 @@ import {Favorite} from './Favorite/Favorite';
 import {Watchlist} from './Watchlist/Watchlist';
 import {MovieI} from './MovieImdb/MovieI';
 import User from './User/User';
+import Alert from './Alert/Alert';
+import Search from './Search/Search';
 
 export {
   ChevronLeft,
@@ -18,4 +20,6 @@ export {
   Watchlist,
   MovieI,
   User,
+  Alert,
+  Search,
 };

@@ -20,7 +20,17 @@ import {
   explorePosterLoaded,
 } from './explore/action';
 import {Movies} from './movies/action';
-import {Search} from './search/action';
+import {
+  Search,
+  searchTextChange,
+  searchMoviePageSuccess,
+  searchMoviePageFetch,
+  searchMovieSuccess,
+  searchMovieRequestSlow,
+  searchMovieRequest,
+  searchMoviePageRequest,
+  clearSearchResult,
+} from './search/action';
 import {NetworkActions} from './network/action';
 import {Rehydrates} from './rehydrate/action';
 import {SectionAction} from './sections/action';
@@ -90,6 +100,21 @@ import {
   exploredActionQueueSelect,
   isExploreLoadSelect,
 } from './explore/selector';
+
+import {
+  searchStateSelect,
+  searchRequestPendingSelect,
+  searchDebouncePendingSelect,
+  searchTextSelect,
+  searchCurrentPageSelect,
+  searchLastPageSelect,
+  searchLastUpdateSelect,
+  searchLoadingSelect,
+  searchMovieIDSelect,
+  searchPagePendingSelect,
+  searchRequestSlowSelect,
+  searchTextEmptySelect,
+} from './search/selector';
 
 // For reducer
 export {
@@ -174,4 +199,26 @@ export {
   exploredSeenMapSelect,
   exploredActionQueueSelect,
   isExploreLoadSelect,
+  //
+  searchTextChange,
+  searchMoviePageSuccess,
+  searchMoviePageFetch,
+  searchMovieSuccess,
+  searchMovieRequestSlow,
+  searchMovieRequest,
+  searchMoviePageRequest,
+  clearSearchResult,
+  //
+  searchStateSelect,
+  searchRequestPendingSelect,
+  searchDebouncePendingSelect,
+  searchTextSelect,
+  searchCurrentPageSelect,
+  searchLastPageSelect,
+  searchLastUpdateSelect,
+  searchLoadingSelect,
+  searchMovieIDSelect,
+  searchPagePendingSelect,
+  searchRequestSlowSelect,
+  searchTextEmptySelect,
 };

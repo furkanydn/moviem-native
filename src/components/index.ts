@@ -40,6 +40,8 @@ import Label from './movie/Label';
 import CardLabel from './movie/CardLabel';
 import MDeck from './movie/MDeck';
 import EMovieDeck from './movie/EMovieDeck';
+import HorizontalScroll from './general/HorizontalScroll';
+import Browse from './movie/Browse';
 
 export {
   TextView,
@@ -87,4 +89,6 @@ export {
   CardLabel,
   MDeck,
   EMovieDeck,
+  HorizontalScroll,
+  Browse,
 };
