@@ -4,5 +4,5 @@ export const config = {
   isAndroid: Platform.OS === 'android',
   logGeneral: false,
   logNetworkMessage: false,
-  rotronHost: '192.168.0.3',
+  rotronHost: '192.168.1.44',
 };
