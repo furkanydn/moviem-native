@@ -10,7 +10,7 @@ interface ChangeMovieStatusParams {
   status: boolean;
 }
 // Bileşenlerin Hazırlanması
-export const addMovie = (movies: Movie[]) =>
+export const addMovie = (movies: Movie) =>
   <const>{type: movieConst.ADD_MOVIES, movies};
 
 export const fetchMovieAccountStateRequest = (
