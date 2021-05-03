@@ -2,7 +2,7 @@ import React from 'react';
 import {isNil} from 'lodash';
 import {Animated, StyleSheet, View, ViewStyle} from 'react-native';
 import {NavigationInjectedProps, withNavigation} from 'react-navigation';
-import {Scene} from '@react-navigation/stack/lib/typescript/src/types';
+import {Scene} from 'react-navigation-stack/lib/typescript/types';
 
 // Uygulama İçi
 import {THEME} from '../../utils/theme';

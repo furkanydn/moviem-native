@@ -67,6 +67,7 @@ export const THEME = {
   // Özelliklerin Hazırlanması
   specification: {
     statusBarHeight: phoneHeight,
+    bottomBarHeight: 50,
     get fullHeight() {
       return phoneHeight + this.statusBarHeight;
     },

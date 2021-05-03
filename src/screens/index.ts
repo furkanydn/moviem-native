@@ -7,6 +7,7 @@ import Browse from './Browse/Browse';
 import Library from './Library/Library';
 import Detail from './Detail/Detail';
 import Settings from './Settings/Settings';
+import Splash from './Splash/Splash';
 
 // Exports
 export {
@@ -19,4 +20,5 @@ export {
   Library,
   Detail,
   Settings,
+  Splash,
 };

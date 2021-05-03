@@ -15,6 +15,9 @@ import SearchDark from './SearchDark/SearchDark';
 import Heart from './Heart/Heart';
 import Cog from './Cog/Cog';
 import Watch from './Watch/Watch';
+import HomeDark from './HomeDark/HomeDark';
+import ExploreDark from './ExploreDark/ExploreDark';
+import LibraryDark from './LibraryDark/LibraryDark';
 
 export {
   ChevronLeft,
@@ -34,4 +37,7 @@ export {
   Heart,
   Cog,
   Watch,
+  HomeDark,
+  ExploreDark,
+  LibraryDark,
 };
