@@ -5,6 +5,7 @@ import Explore from './Explore/Explore';
 import SectionList, {SectionListNavigationParams} from './Movie/SectionList';
 import Browse from './Browse/Browse';
 import Library from './Library/Library';
+import Detail from './Detail/Detail';
 
 // Exports
 export {
@@ -15,4 +16,5 @@ export {
   SectionListNavigationParams,
   Browse,
   Library,
+  Detail,
 };
