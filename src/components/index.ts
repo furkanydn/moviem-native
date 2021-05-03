@@ -44,6 +44,7 @@ import HorizontalScroll from './general/HorizontalScroll';
 import BrowseS from './movie/BrowseS';
 import Search from './in-app/Search';
 import BrowseWrapper from './movie/BrowseWrapper';
+import BButton from './general/BButton';
 
 export {
   TextView,
@@ -95,4 +96,5 @@ export {
   BrowseS,
   Search,
   BrowseWrapper,
+  BButton,
 };

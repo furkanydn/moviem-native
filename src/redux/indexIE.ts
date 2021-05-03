@@ -54,8 +54,8 @@ import {
   fetchSectionNextPageRequest,
 } from './sections/action';
 import {browseSectionKey} from './sections/sectionData';
-import {SectionKeys} from './sections/type';
-import {sectionData} from './sections/sectionData';
+import {SectionKeys, LibrarySectionKey} from './sections/type';
+import {sectionData, librarySectionKey} from './sections/sectionData';
 import {getSectionSelectByKey} from './sections/selector';
 
 import {
@@ -166,7 +166,9 @@ export {
   //
   browseSectionKey,
   SectionKeys,
+  LibrarySectionKey,
   sectionData,
+  librarySectionKey,
   getSectionSelectByKey,
   getMovieSelectByID,
   isGuestUserSelect,

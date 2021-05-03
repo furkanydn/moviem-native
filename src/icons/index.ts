@@ -12,6 +12,9 @@ import SearchI from './Search/SearchI';
 import {Back} from './Back/Back';
 import {Close} from './Close/Close';
 import SearchDark from './SearchDark/SearchDark';
+import Heart from './Heart/Heart';
+import Cog from './Cog/Cog';
+import Watch from './Watch/Watch';
 
 export {
   ChevronLeft,
@@ -28,4 +31,7 @@ export {
   Back,
   Close,
   SearchDark,
+  Heart,
+  Cog,
+  Watch,
 };
