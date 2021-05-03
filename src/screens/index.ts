@@ -6,6 +6,7 @@ import SectionList, {SectionListNavigationParams} from './Movie/SectionList';
 import Browse from './Browse/Browse';
 import Library from './Library/Library';
 import Detail from './Detail/Detail';
+import Settings from './Settings/Settings';
 
 // Exports
 export {
@@ -17,4 +18,5 @@ export {
   Browse,
   Library,
   Detail,
+  Settings,
 };

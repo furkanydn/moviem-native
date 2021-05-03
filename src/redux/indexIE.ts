@@ -9,7 +9,11 @@ import {
 import {SocialAction} from './explore/type';
 import {RootState, RootAction} from './type';
 
-import {AuthAction} from './auth/action';
+import {
+  AuthAction,
+  CreateLogOutRequest,
+  createLogOutRequest,
+} from './auth/action';
 import {
   Explore,
   exploreLoadRequest,
@@ -89,6 +93,10 @@ import {
   createAuthSessionPendingSelect,
   sessionIDSelect,
   createGuestSessionErrorSelect,
+  userSelect,
+  usernameSelect,
+  authUserSelect,
+  guestUserSelect,
 } from './auth/selector';
 
 import {
@@ -130,6 +138,8 @@ export {
   // Actions
   SocialAction,
   AuthAction,
+  CreateLogOutRequest,
+  createLogOutRequest,
   Explore,
   Movies,
   Search,
@@ -223,4 +233,9 @@ export {
   searchPagePendingSelect,
   searchRequestSlowSelect,
   searchTextEmptySelect,
+  //
+  userSelect,
+  usernameSelect,
+  authUserSelect,
+  guestUserSelect,
 };

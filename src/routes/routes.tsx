@@ -14,7 +14,7 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {config} from '../config/config';
 import {Header, NavigateButtonWrapper, NavigationWrapper} from '../components';
 import {ExploreIcon, HomeIcon, VideoFolderIcon} from '../icons';
-import {Welcome, Login, Explore, Browse, Library,Detail,SectionList} from '../screens';
+import {Welcome, Login, Explore, Browse, Library,Detail,SectionList,Settings} from '../screens';
 import {THEME} from '../utils/theme';
 import {fromRightFade} from './transition';
 import {routeName, tabName} from './routeName';
