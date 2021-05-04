@@ -103,6 +103,7 @@ export function* rootSaga(): SagaIterator {
     takeLatest(
       searchConst.SEARCH_MOVIES_PAGINATION_FETCH,
       searchSaga.searchMoviePageFetchSaga,
+    ),
 
     // Bölüm Etkileşimleri
     takeEvery(

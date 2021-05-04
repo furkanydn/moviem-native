@@ -58,6 +58,7 @@ export function* fetchMovieAccountStateSaga(
         movieID,
         ...userIDs,
       },
+    );
 
     yield put(fetchMovieAccountStateSuccess({movieID, favorite, watchlist}));
     Success && Success();
@@ -67,32 +68,45 @@ export function* fetchMovieAccountStateSaga(
   }
 }
 
-export function* fetchMovieRecommendSaga(action: FetchMovieRecommendationRequest) {
-  const {movieID,Error,Success} = action;
+export function* fetchMovieRecommendSaga(
+  action: FetchMovieRecommendationRequest,
+) {
+  const {movieID, Error, Success} = action;
 
   try {
-    const {data}: AxiosResponse<MovieListApiResponse> = yield call(getMovieRecommendationsAPI,{
-      movieID,
-      page: 1,
-    });
+    const {data}: AxiosResponse<MovieListApiResponse> = yield call(
+      getMovieRecommendationsAPI,
+      {
+        movieID,
+        page: 1,
+      },
+    );
     const {movieIDs} = normalizeAndAddMovie(data.result);
 
-    yield put(fetchMovieRecommendationsSuccess({movieID,recommendMovieIDs: movieIDs}));
+    yield put(
+      fetchMovieRecommendationsSuccess({movieID, recommendMovieIDs: movieIDs}),
+    );
     Success && Success();
   } catch (e) {
     Error && Error();
-    yield put(handleNetworkReduxError(e,action));
+    yield put(handleNetworkReduxError(e, action));
   }
 }
 
-export function* changeMovieStatusSaga({movieID,status,statusType,onSuccess,onError}:ChangeMovieStatusRequest) {
+export function* changeMovieStatusSaga({
+  movieID,
+  status,
+  statusType,
+  Success,
+  Error,
+}: ChangeMovieStatusRequest) {
   try {
     const userIDs: UserIDParams = yield select(userIDParamsSelect);
-    yield call(changeMovieStatusAPI,{movieID,statusType,status,...userIDs});
-    yield put(changeMovieStatusSuccess({movieID,statusType,status}));
-    onSuccess && onSuccess();
+    yield call(changeMovieStatusAPI, {movieID, statusType, status, ...userIDs});
+    yield put(changeMovieStatusSuccess({movieID, statusType, status}));
+    Success && Success();
   } catch (e) {
-    yield put(changeMovieStatusFail({movieID,statusType,status}));
-    onError && onError();
+    yield put(changeMovieStatusFail({movieID, statusType, status}));
+    Error && Error();
   }
 }

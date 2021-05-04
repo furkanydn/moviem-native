@@ -76,7 +76,9 @@ export const changeMovieStatusSuccess = (params: ChangeMovieStatusParams) =>
     ...params,
   };
 
-export const changeMovieStatusFail = (params: ChangeMovieStatusParams) =>
+export const changeMovieStatusFail = (
+  params: ChangeMovieStatusParams & WithCallback,
+) =>
   <const>{
     type: movieConst.CHANGE_MOVIE_STATUS_FAILURE,
     ...params,
