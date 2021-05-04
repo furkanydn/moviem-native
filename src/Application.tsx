@@ -12,4 +12,6 @@ import {
   stopNetworkMonitoring,
 } from './redux/network/action';
 import navigationService from './routes/navigationService';
-// import {RootS}
+import {RootStack} from "./routes/routes";
+
+// Durum ve Özellikler

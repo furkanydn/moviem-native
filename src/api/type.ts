@@ -26,7 +26,7 @@ export interface SpokenLanguage {
 }
 export interface MovieAPIResponse {
   id?: MovieID;
-  posterPath?: string;
+  poster_path?: string;
   adult?: boolean;
   overview?: string;
   releaseDate?: string;

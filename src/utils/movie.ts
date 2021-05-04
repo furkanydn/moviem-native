@@ -20,7 +20,7 @@ export const requireMovieProp: MovieRequiredPropKey[] = [
   'title',
   'overview',
   'releaseDate',
-  'posterPath',
+  'poster_path',
   'backdropPath',
 ];
 
@@ -51,7 +51,7 @@ const movieStoreProp: MovieStoreProps = {
   isWatchListPending: false,
 };
 
-export const normalizeMovie = (movie: ParsedMovie): Movie => {
+export const normalizeMovie = (movie: MovieAPIResponse[]): Movie => {
   const normalizeMovieProp: NormalizeMovieProps = {
     year: movie.releaseDate.substr(0, 4),
   };
