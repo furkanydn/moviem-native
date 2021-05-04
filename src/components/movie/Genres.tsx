@@ -12,7 +12,7 @@ type Props = {
 
 // Bileşen
 class Genres extends React.PureComponent<Props> {
-  generateText = (genres: MovieAPIDetailed['genre']) =>
+  generateText = (genres: MovieAPIDetailed['genres']) =>
     genres
       .map(genre => genre.name)
       .splice(0, 4)
@@ -20,12 +20,12 @@ class Genres extends React.PureComponent<Props> {
 
   render() {
     const {detailMovie, style} = this.props;
-    const {genre} = detailMovie;
+    const {genres} = detailMovie;
 
     return (
-      genre && (
+      genres && (
         <TextView style={[style, {color: THEME.COLORS.lighter}]}>
-          {this.generateText(genre)}
+          {this.generateText(genres)}
         </TextView>
       )
     );

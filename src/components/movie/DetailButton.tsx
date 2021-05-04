@@ -20,7 +20,7 @@ const mapDispatchProps = {
 
 type OwnProps = {
   movie: Movie;
-  detailMovie: MovieAPIDetailed;
+  detailMovie: MovieAPIDetailed | undefined;
 };
 
 type ReduxProps = ReturnType<typeof mapStateProps> & typeof mapDispatchProps;
@@ -51,8 +51,8 @@ class DetailButton extends React.PureComponent<Props> {
 
   ImdbClick = () => {
     const {detailMovie} = this.props;
-    if (detailMovie && detailMovie.imdbID) {
-      safeURLOpen(getIMDB_Url(detailMovie.imdbID));
+    if (detailMovie && detailMovie.imdb_id) {
+      safeURLOpen(getIMDB_Url(detailMovie.imdb_id));
     }
   };
 
@@ -64,7 +64,7 @@ class DetailButton extends React.PureComponent<Props> {
       isInWatchList,
       isWatchListPending,
     } = movie;
-    const imdblinkON = detailMovie && detailMovie.imdbID;
+    const imdblinkON = detailMovie && detailMovie.imdb_id;
 
     return (
       <View style={styles.container}>

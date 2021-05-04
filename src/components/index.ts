@@ -24,7 +24,7 @@ import Preview, {getMoviePreHeight} from './movie/Preview';
 import UserScore from './movie/UserScore';
 import ScoreYear from './movie/ScoreYear';
 import HorizontalFlatList from './movie/HorizontalFlatList';
-import mDetail from './movie/MDetail';
+import MDetail from './movie/MDetail';
 import Footer from './general/Footer';
 import Info from './general/Info';
 import InlinePreview from './general/InlinePreview';
@@ -76,7 +76,7 @@ export {
   UserScore,
   ScoreYear,
   HorizontalFlatList,
-  mDetail,
+  MDetail,
   Footer,
   Info,
   InlinePreview,

@@ -6,7 +6,7 @@ import {
 } from 'react-navigation-stack';
 import {connect} from 'react-redux';
 // Yerel İmportlar
-import {withDelayLoading, mDetail, Wrapper} from '../../components/index';
+import {withDelayLoading, MDetail, Wrapper} from '../../components/index';
 import {
   isGuestUserSelect,
   fetchMovieDetailedRequest,
@@ -81,7 +81,7 @@ class Detail extends React.PureComponent<Props> {
 
     return (
       <Wrapper>
-        <mDetail movie={movie} />
+        <MDetail movie={movie} />
       </Wrapper>
     );
   }

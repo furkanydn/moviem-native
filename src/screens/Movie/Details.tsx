@@ -6,7 +6,7 @@ import {
 } from 'react-navigation-stack';
 import {connect} from 'react-redux';
 //
-import {withDelayLoading, mDetail, Wrapper} from '../../components';
+import {withDelayLoading, MDetail, Wrapper} from '../../components';
 import {
   MovieID,
   RootState,

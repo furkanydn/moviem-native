@@ -19,9 +19,9 @@ export const requireMovieProp: MovieRequiredPropKey[] = [
   'id',
   'title',
   'overview',
-  'releaseDate',
+  'release_date',
   'poster_path',
-  'backdropPath',
+  'backdrop_path',
 ];
 
 export const goodMovieRate = (rating: number) => rating >= 7;

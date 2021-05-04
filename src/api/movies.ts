@@ -45,10 +45,10 @@ export const getMovieDetailAPI = ({movieID}: MovieIDParam) =>
 //https://developers.themoviedb.org/3/movies/get-movie-account-states
 export const getMovieAccountStateAPI = ({
   movieID,
-  sessionID,
+  sessionId,
 }: MovieIDParam & UserIDParams) =>
   API.get<GetMovieAccountStateApiResponse>(
-    withKEY(`/movie/${movieID}/account_states`) + `&session_id=${sessionID}`,
+    withKEY(`/movie/${movieID}/account_states`) + `&session_id=${sessionId}`,
   );
 
 //https://developers.themoviedb.org/3/movies/get-movie-recommendations
@@ -72,14 +72,14 @@ export const getTopRatedMovieAPI = ({page}: GetMovieListApiParam) =>
 
 //https://developers.themoviedb.org/3/account/mark-as-favorite or https://developers.themoviedb.org/3/account/add-to-watchlist
 export const changeMovieStatusAPI = (param: ChangeMovieStatusApiParam) => {
-  const {accountID, movieID, status, statusType, sessionID} = param;
+  const {accountId, movieID, status, statusType, sessionId} = param;
   const postQuery = {
     mediaType: 'movie',
     mediaID: movieID,
     [statusType]: status,
   };
   const queryString = API.post<ChangeMovieStatusApiResponse>(
-    `${withKEY(`/account/${accountID}/${statusType}`)}&session_id${sessionID}`,
+    `${withKEY(`/account/${accountId}/${statusType}`)}&session_id${sessionId}`,
     postQuery,
   );
 
@@ -89,25 +89,25 @@ export const changeMovieStatusAPI = (param: ChangeMovieStatusApiParam) => {
 //https://developers.themoviedb.org/3/account/get-favorite-movies
 export const getFavoriteMoviesAPI = ({
   page,
-  accountID,
-  sessionID,
+  accountId,
+  sessionId,
 }: GetMovieListApiParam) =>
   API.get<MovieListApiResponse>(
     `${withKEY(
-      `/account/${accountID}/favorite/movies`,
-    )}&session_id=${sessionID}&page${page}`,
+      `/account/${accountId}/favorite/movies`,
+    )}&session_id=${sessionId}&page${page}`,
   );
 
 //https://developers.themoviedb.org/3/account/get-movie-watchlist
 export const getWatchListMovieAPI = ({
   page,
-  accountID,
-  sessionID,
+  accountId,
+  sessionId,
 }: GetMovieListApiParam) =>
   API.get<MovieListApiResponse>(
     `${withKEY(
-      `/account/${accountID}/watchlist/movies`,
-    )}&session_id=${sessionID}&page${page}`,
+      `/account/${accountId}/watchlist/movies`,
+    )}&session_id=${sessionId}&page${page}`,
   );
 
 //- API Bileşenleri - Search -//

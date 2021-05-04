@@ -23,7 +23,7 @@ type Props = {
 };
 
 // Bileşen
-class mDetail extends React.PureComponent<Props> {
+class MDetail extends React.PureComponent<Props> {
   renderEmpty = () => (
     <View style={styles.emptyContainer}>
       <TextView type="headingTwo">No Movies Found</TextView>
@@ -51,8 +51,8 @@ class mDetail extends React.PureComponent<Props> {
       title,
       overview,
       movieDetailed,
-      backdropPath,
-      voteAverage,
+      backdrop_path,
+      vote_average,
       year,
     } = movie;
 
@@ -62,13 +62,16 @@ class mDetail extends React.PureComponent<Props> {
           contentContainerStyle={styles.scrollContent}
           style={styles.scroll}
           showsVerticalScrollIndicator={false}>
-          <Backdrop title={title} backdropPath={backdropPath} />
+          <Backdrop title={title} backdropPath={backdrop_path} />
           <View style={styles.marginHor}>
             <ScoreYear
-              score={voteAverage}
+              score={vote_average}
               year={year}
               style={styles.marginBot}
             />
+            {movieDetailed && (
+              <Genres detailMovie={movieDetailed} style={styles.marginBot} />
+            )}
             <DetailButton movie={movie} detailMovie={movieDetailed} />
             <TextView style={styles.marginBot} type="buttonHeader">
               Overview
@@ -111,4 +114,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default mDetail;
+export default MDetail;

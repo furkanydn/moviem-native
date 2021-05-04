@@ -6,7 +6,7 @@ export type MovieAPIKey = keyof MovieAPIResponse;
 export type MovieRequiredProps = Required<
   Pick<
     MovieAPIResponse,
-    'id' | 'title' | 'overview' | 'releaseDate' | 'poster_path' | 'backdropPath'
+    'id' | 'title' | 'overview' | 'release_date' | 'poster_path' | 'backdrop_path'
   >
 >;
 export type MovieRequiredPropKey = keyof MovieRequiredProps;

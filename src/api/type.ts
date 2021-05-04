@@ -11,8 +11,8 @@ export interface RatedValue {
 export interface ProductionCompany {
   id: number;
   name: string;
-  logoPath: string | null;
-  originCountry: string;
+  logo_path: string | null;
+  origin_country: string;
 }
 // https://www.iso.org/standard/72482.html
 export interface ProductionCountry {
@@ -29,49 +29,49 @@ export interface MovieAPIResponse {
   poster_path?: string;
   adult?: boolean;
   overview?: string;
-  releaseDate?: string;
-  genreID?: number[];
-  originalTitle?: string;
-  originalLanguage?: string;
+  release_date?: string;
+  genre_ids?: number[];
+  original_title?: string;
+  original_language?: string;
   title?: string;
-  backdropPath?: string;
+  backdrop_path?: string;
   popularity?: number;
-  voteCount?: number;
-  voteAverage?: number;
+  vote_count?: number;
+  vote_average?: number;
 }
 export interface MovieAPIDetailed {
   id?: number;
   adult?: boolean;
-  backdropPath?: string;
+  backdrop_path?: string;
   budget?: number;
-  genre: Genre[];
+  genres: Genre[];
   homepage?: string | null;
-  imdbID?: string | null;
-  originalLanguage?: string;
-  originalTitle?: string;
+  imdb_id?: string | null;
+  original_language?: string;
+  original_title?: string;
   overview?: string | null;
   popularity?: number;
-  posterPath?: string | null;
-  productionCompany?: ProductionCompany[];
-  productionCountry?: ProductionCountry[];
-  releaseDate?: string;
+  poster_path?: string | null;
+  production_companies?: ProductionCompany[];
+  production_countries?: ProductionCountry[];
+  release_date?: string;
   revenue?: number;
   runtime?: number | null;
-  spokenLanguage?: SpokenLanguage[];
+  spoken_languages?: SpokenLanguage[];
   status?: MovieStatus;
   tagline?: string | null;
   title?: string;
   video?: boolean;
-  voteCount?: number;
-  voteAverage?: number;
+  vote_count?: number;
+  vote_average?: number;
 }
 // Parametreler
 export interface PageParam {
   page: number;
 }
 export interface UserIDParams {
-  sessionID: string;
-  accountID: number;
+  sessionId: string;
+  accountId: number;
 }
 // API Film Durumları
 export type MovieStatus =

@@ -5,7 +5,7 @@ import {TextView, UserScore} from '../index';
 
 // Durum ve Özellikler
 type Props = {
-  score: number;
+  score: number | any;
   year: string;
   style?: ViewStyle;
 };
