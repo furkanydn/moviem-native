@@ -23,7 +23,7 @@ type Props = {
 };
 
 // Bileşen
-class Detail extends React.PureComponent<Props> {
+class mDetail extends React.PureComponent<Props> {
   renderEmpty = () => (
     <View style={styles.emptyContainer}>
       <TextView type="headingTwo">No Movies Found</TextView>
@@ -111,4 +111,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Detail;
+export default mDetail;

@@ -12,6 +12,45 @@ import {
   stopNetworkMonitoring,
 } from './redux/network/action';
 import navigationService from './routes/navigationService';
-import {RootStack} from "./routes/routes";
+import {RootStack} from './routes/routes';
 
 // Durum ve Özellikler
+const MapStateProps = () => ({});
+
+const MapDispatchProps = {
+  startNetworkMonitoring,
+  stopNetworkMonitoring,
+};
+
+type ReduxProps = ReturnType<typeof MapStateProps> & typeof MapDispatchProps;
+type Props = ReduxProps;
+
+// Bileşen
+class Application extends React.PureComponent<Props> {
+  bSplashTime: NodeJS.Timeout | undefined;
+
+  componentDidMount() {
+    const {startNetworkMonitoring} = this.props;
+    startNetworkMonitoring();
+    this.bSplashTime = setTimeout(() => {
+      RNBootSplash.hide({fade: true});
+    }, 300);
+  }
+
+  componentWillUnmount() {
+    const {stopNetworkMonitoring} = this.props;
+    stopNetworkMonitoring();
+    this.bSplashTime && clearTimeout(this.bSplashTime);
+  }
+
+  render() {
+    return (
+      <View style={StyleSheets.displayAreaContainer}>
+        <RootStack ref={navigationService.setNavigatorRef} theme="dark" />
+        <ToastMessage />
+      </View>
+    );
+  }
+}
+
+export default connect(MapStateProps, MapDispatchProps)(Application);

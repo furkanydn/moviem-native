@@ -6,7 +6,7 @@ import {
 } from 'react-navigation-stack';
 import {connect} from 'react-redux';
 //
-import {withDelayLoading, Detail, Wrapper} from '../../components';
+import {withDelayLoading, mDetail, Wrapper} from '../../components';
 import {
   MovieID,
   RootState,
@@ -81,7 +81,7 @@ class Details extends React.PureComponent<Props> {
 
     return (
       <Wrapper>
-        <Detail movie={movie} />
+        <mDetail movie={movie} />
       </Wrapper>
     );
   }

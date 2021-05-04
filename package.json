@@ -7,11 +7,11 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint --ext .js,.jsx,.mjs,.ts,.tsx .",
+    "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.2",
-    "@react-native-community/async-storage": "^1.12.1",
     "@react-native-community/netinfo": "^6.0.0",
     "@react-navigation/bottom-tabs": "^5.11.10",
     "@react-navigation/native": "^3.8.4",
@@ -28,6 +28,8 @@
     "react-native-gesture-handler": "^1.10.3",
     "react-native-linear-gradient": "^2.5.6",
     "react-native-reanimated": "^2.1.0",
+    "react-native-safe-area-context": "^3.2.0",
+    "react-native-screens": "^3.1.1",
     "react-native-svg": "^12.1.0",
     "react-navigation": "^4.4.4",
     "react-navigation-stack": "^1.10.3",
@@ -64,6 +66,11 @@
     "react-test-renderer": "17.0.2",
     "reactotron-react-native": "^5.0.0",
     "typescript": "^4.2.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn compile && yarn lint"
+    }
   },
   "jest": {
     "preset": "react-native"
