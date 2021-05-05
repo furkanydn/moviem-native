@@ -58,7 +58,7 @@ class Preview extends React.PureComponent<Props> {
 
     const params: DetailsScreenNavParams = {movieID};
     navigation.navigate({
-      routeName: routeName.MovieDetailsScreen,
+      routeName: routeName.Detail,
       params,
       key: `${movieID}_${uuid.v4()}`,
     });

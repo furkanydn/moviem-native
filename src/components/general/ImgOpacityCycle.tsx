@@ -2,9 +2,9 @@ import React from 'react';
 import {StyleSheet, View, ViewStyle} from 'react-native';
 import FastImage, {FastImageProps} from 'react-native-fast-image';
 import Animated, {
-  Easing,
+  EasingNode,
   Extrapolate,
-  interpolate,
+  interpolateNode,
 } from 'react-native-reanimated';
 import {THEME} from '../../utils/theme';
 
@@ -32,7 +32,7 @@ class ImgOpacityCycle extends React.PureComponent<Props> {
     Animated.timing(this.cycleAnimValue, {
       toValue: 1,
       duration: this.fullCycleTime,
-      easing: Easing.linear,
+      easing: EasingNode.linear,
     }).start(({finished}) => {
       if (finished) {
         requestAnimationFrame(() => this.initAnimation());
@@ -49,24 +49,24 @@ class ImgOpacityCycle extends React.PureComponent<Props> {
     const fadeFraction = this.getFractionByTi(fadeOutTime);
 
     const scale = first
-      ? interpolate(this.cycleAnimValue, {
+      ? interpolateNode(this.cycleAnimValue, {
           inputRange: [0, finish, 1 - fadeFraction, 1],
           outputRange: [scaleMidPts, scaleTo, 1, scaleMidPts],
           extrapolate: Extrapolate.CLAMP,
         })
-      : interpolate(this.cycleAnimValue, {
+      : interpolateNode(this.cycleAnimValue, {
           inputRange: [start - fadeFraction, finish, finish + 0.001],
           outputRange: [1, scaleTo, 1],
           extrapolate: Extrapolate.CLAMP,
         });
 
     const opacity = first
-      ? interpolate(this.cycleAnimValue, {
+      ? interpolateNode(this.cycleAnimValue, {
           inputRange: [0, finish - fadeFraction, finish, 1 - fadeFraction, 1],
           outputRange: [1, 1, 0, 0, 1],
           extrapolate: Extrapolate.CLAMP,
         })
-      : interpolate(this.cycleAnimValue, {
+      : interpolateNode(this.cycleAnimValue, {
           inputRange: [start - fadeFraction, finish - fadeFraction, finish],
           outputRange: [1, 1, 0],
           extrapolate: Extrapolate.CLAMP,
@@ -84,7 +84,7 @@ class ImgOpacityCycle extends React.PureComponent<Props> {
       Animated.timing(this.contentDimmerAnimValue, {
         toValue: 0,
         duration: 300,
-        easing: Easing.linear,
+        easing: EasingNode.linear,
       }).start();
     }
   };

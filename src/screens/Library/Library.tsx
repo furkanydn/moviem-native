@@ -15,7 +15,7 @@ import {
   librarySectionKey,
   LibrarySectionKey,
 } from '../../redux/indexIE';
-import NavigationService from '../../routes/navigationService';
+import NavigationService from '../../routes/NavigationService';
 import {routeName} from '../../routes/routeName';
 import {SectionListNavigationParams} from '../Movie/SectionList';
 
@@ -48,7 +48,7 @@ class Library extends React.PureComponent<Props> {
 
       const Click = () => {
         const params: SectionListNavigationParams = {sectionKey};
-        navigation.navigate(routeName.SectionListScreen, params);
+        navigation.navigate(routeName.SectionList, params);
       };
 
       const Icon = librarySIcon[sectionKey];

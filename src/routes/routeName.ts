@@ -7,8 +7,8 @@ export const routeName = {
   AuthLogin: 'Login',
 
   Settings: 'Settings',
-  SectionListScreen: 'SectionListScreen',
-  MovieDetailsScreen: 'MovieDetailsScreen',
+  SectionList: 'SectionList',
+  Detail: 'Details',
 
   BottomTabs: 'BottomTabs',
 };

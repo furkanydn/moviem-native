@@ -14,7 +14,7 @@ import {
 } from '../../api/auth';
 import {getErrorMessage} from '../../api/errors';
 import {ToastMessage} from '../../components/index';
-import NavigationService from '../../routes/navigationService';
+import NavigationService from '../../routes/NavigationService';
 import {routeName} from '../../routes/routeName';
 import {CreateResponseError} from '../../utils/error';
 import {createAuthUserAccountData} from '../../utils/user';

@@ -6,6 +6,6 @@ export interface FailedRequest {
 }
 
 export interface ReDispatchConfig {
-  sameAction?: (actionA: AnyAction, actionB: AnyAction) => boolean;
+  isSameAction?: (actionA: AnyAction, actionB: AnyAction) => boolean;
   clearActionFromQueue?: string[] | string;
 }

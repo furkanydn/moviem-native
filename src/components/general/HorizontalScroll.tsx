@@ -40,7 +40,7 @@ class HorizontalScroll extends React.PureComponent<Props> {
     const {navigation, sectionKey} = this.props;
     const params: SectionListNavigationParams = {sectionKey};
 
-    navigation.navigate(routeName.SectionListScreen, params);
+    navigation.navigate(routeName.SectionList, params);
   };
 
   render() {

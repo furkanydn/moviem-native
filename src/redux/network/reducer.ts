@@ -44,7 +44,7 @@ const handleNetworkReduxError = (
   action: HandleNetworkReduxError,
 ): NetworkState => {
   const {error, reDispatchAction, reDispatchConfig} = action;
-  const {sameAction: sameActionConfig} = reDispatchConfig;
+  const {isSameAction: sameActionConfig} = reDispatchConfig;
 
   if (!isNetworkError(error) && !isServerError(error)) {
     return state;

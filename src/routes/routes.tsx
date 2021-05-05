@@ -50,8 +50,8 @@ const BottomTab = createBottomTabNavigator(
     [tabName.browse]: {
       screen: createDefStackNavigator({
         [tabName.browse]: Browse,
-        [routeName.SectionListScreen]: SectionList,
-        [routeName.MovieDetailsScreen]: Detail,
+        [routeName.SectionList]: SectionList,
+        [routeName.Detail]: Detail,
       }),
     },
     [tabName.explore]: {
@@ -63,8 +63,8 @@ const BottomTab = createBottomTabNavigator(
       screen: createDefStackNavigator({
         [tabName.library]: Library,
         [routeName.Settings]: Settings,
-        [routeName.SectionListScreen]: SectionList,
-        [routeName.MovieDetailsScreen]: Detail,
+        [routeName.SectionList]: SectionList,
+        [routeName.Detail]: Detail,
       }),
     },
   },

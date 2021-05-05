@@ -11,7 +11,7 @@ import {
   startNetworkMonitoring,
   stopNetworkMonitoring,
 } from './redux/network/action';
-import navigationService from './routes/navigationService';
+import NavigationService from './routes/NavigationService';
 import {RootStack} from './routes/routes';
 
 // Durum ve Özellikler
@@ -30,14 +30,16 @@ class Application extends React.PureComponent<Props> {
   bSplashTime: NodeJS.Timeout | undefined;
 
   componentDidMount() {
+    // eslint-disable-next-line no-shadow
     const {startNetworkMonitoring} = this.props;
     startNetworkMonitoring();
     this.bSplashTime = setTimeout(() => {
-      RNBootSplash.hide({fade: true});
+      RNBootSplash.hide();
     }, 300);
   }
 
   componentWillUnmount() {
+    // eslint-disable-next-line no-shadow
     const {stopNetworkMonitoring} = this.props;
     stopNetworkMonitoring();
     this.bSplashTime && clearTimeout(this.bSplashTime);
@@ -46,7 +48,7 @@ class Application extends React.PureComponent<Props> {
   render() {
     return (
       <View style={StyleSheets.displayAreaContainer}>
-        <RootStack ref={navigationService.setNavigatorRef} theme="dark" />
+        <RootStack ref={NavigationService.setNavigatorRef} theme="dark" />
         <ToastMessage />
       </View>
     );

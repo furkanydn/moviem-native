@@ -1,6 +1,6 @@
 import Reactotron from 'reactotron-react-native';
 import {persistor} from '../redux/store';
-import NavigationService from '../routes/navigationService';
+import NavigationService from '../routes/NavigationService';
 import {routeName} from '../routes/routeName';
 
 // Reactotron Komutları

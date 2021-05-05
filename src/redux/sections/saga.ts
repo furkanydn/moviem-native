@@ -43,7 +43,7 @@ export function* refreshSectionRequestSaga(action: RefreshSectionRequest) {
   } catch (e) {
     yield put(
       handleNetworkReduxError(e, action, {
-        sameAction: isSameSectionRequest,
+        isSameAction: isSameSectionRequest,
         clearActionFromQueue: FETCH_SECTION_NEXT_PAGE,
       }),
     );
@@ -90,7 +90,7 @@ export function* fetchSectionNextPageSaga(action: FetchSectionNextPage) {
     }
   } catch (e) {
     yield put(
-      handleNetworkReduxError(e, action, {sameAction: isSameSectionRequest}),
+      handleNetworkReduxError(e, action, {isSameAction: isSameSectionRequest}),
     );
   }
 }

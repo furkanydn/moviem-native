@@ -37,7 +37,7 @@ class InlinePreview extends React.Component<Props> {
     const {navigation, movieID} = this.props;
     const params: DetailsScreenNavParams = {movieID};
 
-    navigation.navigate(routeName.MovieDetailsScreen, params);
+    navigation.navigate(routeName.Detail, params);
   };
 
   render() {
