@@ -32,7 +32,7 @@ export const movieScoreColor = (score: number) =>
   goodMovieRate(score) ? success : normalMovieRate(score) ? warning : danger;
 
 export const lastMovieList = (data: MovieListApiResponse) =>
-  data.page >= data.totalPage;
+  data.page >= data.total_pages;
 
 export const enoughMovieInfo = (movie: MovieAPIResponse) =>
   requireMovieProp.every(prop => !!movie[prop]);

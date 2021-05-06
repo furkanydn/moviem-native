@@ -81,7 +81,7 @@ export function* fetchMovieRecommendSaga(
         page: 1,
       },
     );
-    const {movieIDs} = normalizeAndAddMovie(data.result);
+    const {movieIDs} = normalizeAndAddMovie(data.results);
 
     yield put(
       fetchMovieRecommendationsSuccess({movieID, recommendMovieIDs: movieIDs}),

@@ -1,5 +1,4 @@
 import axios, {AxiosError, AxiosResponse} from 'axios';
-//
 import {config} from '../config/config';
 import {createLogOutRequest} from '../redux/auth/action';
 import StoreService from '../redux/storeService';
@@ -27,7 +26,7 @@ API.interceptors.response.use(
     return response;
   },
   (error: AxiosError) => {
-    //StoreService ile yetkisiz çıkış isteği giderse yönlendirme yapılacak.
+    // StoreService ile yetkisiz çıkış isteği giderse yönlendirme yapılacak.
     if (error?.response?.status === 401) {
       StoreService.dispatch(createLogOutRequest());
     }

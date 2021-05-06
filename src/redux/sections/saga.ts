@@ -31,7 +31,7 @@ export function* refreshSectionRequestSaga(action: RefreshSectionRequest) {
       page: 1,
       ...userIDs,
     });
-    const {movieIDs} = normalizeAndAddMovie(data.result);
+    const {movieIDs} = normalizeAndAddMovie(data.results);
 
     yield put(
       refreshSectionSuccess({
@@ -79,7 +79,7 @@ export function* fetchSectionNextPageSaga(action: FetchSectionNextPage) {
     const isRevUpdate = requestTime.isAfter(lastUpdate);
 
     if (isRevUpdate) {
-      const {movieIDs} = normalizeAndAddMovie(data.result);
+      const {movieIDs} = normalizeAndAddMovie(data.results);
       yield put(
         fetchSectionNextPageSuccess({
           sectionKey,

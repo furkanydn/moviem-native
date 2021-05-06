@@ -2,8 +2,8 @@ import API from './API';
 import {withKEY} from './urlKEY';
 import {MovieIDParam, MovieStatusType} from '../redux/movies/type';
 import {
-  MovieAPIResponse,
   MovieAPIDetailed,
+  MovieAPIResponse,
   PageParam,
   RatedValue,
   UserIDParams,
@@ -12,9 +12,9 @@ import {
 // Bileşenler - Tipler
 export interface MovieListApiResponse {
   page: number;
-  result: MovieAPIResponse[];
-  totalPage: number;
-  totalResult: number;
+  results: MovieAPIResponse[];
+  total_pages: number;
+  total_results: number;
 }
 
 export interface GetMovieListApiParam extends PageParam, UserIDParams {}
@@ -32,8 +32,8 @@ export interface ChangeMovieStatusApiParam extends MovieIDParam, UserIDParams {
 }
 
 export interface ChangeMovieStatusApiResponse {
-  statusCode: number;
-  statusMessage: string;
+  status_code: number;
+  status_message: string;
 }
 
 //- API Bileşenleri - Movies -//
@@ -78,12 +78,10 @@ export const changeMovieStatusAPI = (param: ChangeMovieStatusApiParam) => {
     mediaID: movieID,
     [statusType]: status,
   };
-  const queryString = API.post<ChangeMovieStatusApiResponse>(
+  return API.post<ChangeMovieStatusApiResponse>(
     `${withKEY(`/account/${accountId}/${statusType}`)}&session_id${sessionId}`,
     postQuery,
   );
-
-  return queryString;
 };
 
 //https://developers.themoviedb.org/3/account/get-favorite-movies

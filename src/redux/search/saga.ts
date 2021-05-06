@@ -69,7 +69,7 @@ export function* searchMoviesSaga(action: SearchMovieRequest) {
       getMoviesBySearchQueryAPI,
       {page: 1, query},
     );
-    const {movieIDs} = normalizeAndAddMovie(data.result);
+    const {movieIDs} = normalizeAndAddMovie(data.results);
     yield put(searchMovieSuccess(movieIDs, lastMovieList(data)));
   } catch (e) {
     yield put(
@@ -116,7 +116,7 @@ export function* searchMoviePageFetchSaga(action: SearchMoviePageFetch) {
     const lastUpdated: string = yield select(searchLastUpdateSelect);
     const isRevUpdate = requestTime.isAfter(lastUpdated);
     if (isRevUpdate) {
-      const {movieIDs} = normalizeAndAddMovie(data.result);
+      const {movieIDs} = normalizeAndAddMovie(data.results);
       yield put(searchMoviePageSuccess(movieIDs, lastMovieList(data)));
     }
   } catch (e) {

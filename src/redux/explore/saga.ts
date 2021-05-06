@@ -75,7 +75,7 @@ export function* exploreMoviesLoadSaga(action: ExploreMovieLoad) {
       const seenIDMap: ReturnType<typeof exploredSeenMapSelect> = yield select(
         exploredSeenMapSelect,
       );
-      const unExplored = data.result.filter(
+      const unExplored = data.results.filter(
         notNormalize => !seenIDMap[notNormalize.id],
       );
       const {movieIDs} = normalizeAndAddMovie(unExplored);
