@@ -38,7 +38,6 @@ class Application extends React.PureComponent<Props> {
   }
 
   componentWillUnmount() {
-    // eslint-disable-next-line no-shadow
     const {stopNetworkMonitoring} = this.props;
     stopNetworkMonitoring();
     this.bSplashTime && clearTimeout(this.bSplashTime);
