@@ -12,7 +12,11 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 // Uygulama İçi
 import {config} from '../config/config';
-import {Header, NavigateButtonWrapper} from '../components/index';
+import {
+  Header,
+  NavigateButtonWrapper,
+  NavigationWrapper,
+} from '../components/index';
 import {HomeDark, ExploreDark, LibraryDark} from '../icons/index';
 import {
   Welcome,
@@ -96,6 +100,7 @@ const BottomTab = createBottomTabNavigator(
               return null;
           }
         },
+        tabBarComponent: NavigationWrapper,
         tabBarButtonComponent: NavigateButtonWrapper,
         tabBarOnPress: ({navigation, defaultHandler}) => {
           navigation.dispatch(StackActions.popToTop());

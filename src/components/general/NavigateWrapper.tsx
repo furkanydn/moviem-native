@@ -1,7 +1,7 @@
 import React from 'react';
 import {Animated, StyleSheet, View} from 'react-native';
 import {connect} from 'react-redux';
-import {BottomTabBar} from '@react-navigation/bottom-tabs';
+import {BottomTabBar} from 'react-navigation-tabs';
 
 import {isInternetReachableSelect, RootState} from '../../redux/indexIE';
 import {THEME} from '../../utils/theme';
