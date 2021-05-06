@@ -22,7 +22,7 @@ import {RootState} from '../../redux/type';
 import {THEME} from '../../utils/theme';
 import {safeURLOpen} from '../../utils/network';
 import {validateUserName, validatePassword} from '../../utils/validator';
-import {RESETPASSWORD_URL} from '../../api/urlKEY';
+import {RESET_PASSWORD_URL} from '../../api/urlKEY';
 
 // Durumlar ve Kalıplar
 const initState = {
@@ -64,7 +64,7 @@ class Login extends React.Component<Props, State> {
   };
 
   onForgotClick = () => {
-    safeURLOpen(RESETPASSWORD_URL);
+    safeURLOpen(RESET_PASSWORD_URL);
   };
 
   validateInput = () => {
@@ -87,6 +87,7 @@ class Login extends React.Component<Props, State> {
   onLoginClick = () => {
     if (this.validateInput()) {
       const {username, password} = this.state;
+      // eslint-disable-next-line no-shadow
       const {createAuthSessionRequest} = this.props;
       createAuthSessionRequest({username, password});
     }

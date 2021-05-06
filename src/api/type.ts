@@ -17,12 +17,12 @@ export interface ProductionCompany {
 // https://www.iso.org/standard/72482.html
 export interface ProductionCountry {
   name: string;
-  iso3166: string;
+  iso_3166_1: string;
 }
 // https://www.iso.org/standard/22109.html
 export interface SpokenLanguage {
   name: string;
-  iso639: string;
+  iso_639_1: string;
 }
 export interface MovieAPIResponse {
   id?: MovieID;
