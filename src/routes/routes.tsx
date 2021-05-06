@@ -82,25 +82,27 @@ const BottomTab = createBottomTabNavigator(
       },
       keyboardHidesTabBar: false,
     },
-    defaultNavigationOptions: ({navigation}) => ({
-      tabBarIcon: () => {
-        switch (navigation.state.routeName) {
-          case tabName.browse:
-            return HomeDark();
-          case tabName.explore:
-            return ExploreDark();
-          case tabName.library:
-            return LibraryDark();
-          default:
-            return null;
-        }
-      },
-      tabBarButtonComponent: NavigateButtonWrapper,
-      tabBarOnPress: ({navigation, defaultHandler}) => {
-        navigation.dispatch(StackActions.popToTop());
-        defaultHandler();
-      },
-    }),
+    defaultNavigationOptions({navigation}) {
+      return {
+        tabBarIcon: () => {
+          switch (navigation.state.routeName) {
+            case tabName.browse:
+              return HomeDark();
+            case tabName.explore:
+              return ExploreDark();
+            case tabName.library:
+              return LibraryDark();
+            default:
+              return null;
+          }
+        },
+        tabBarButtonComponent: NavigateButtonWrapper,
+        tabBarOnPress: ({navigation, defaultHandler}) => {
+          navigation.dispatch(StackActions.popToTop());
+          defaultHandler();
+        },
+      };
+    },
   },
 );
 
