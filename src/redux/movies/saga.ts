@@ -26,7 +26,7 @@ import {normalizeAndAddMovie} from './helper';
 
 // Yardımcı Nesneler
 export function* fetchDetailedMovieSaga(action: FetchMovieDetailedRequest) {
-  const {movieID, Error, Success} = action;
+  const {movieID, oError, oSuccess} = action;
 
   try {
     const {data}: AxiosResponse<MovieAPIDetailed> = yield call(
@@ -36,9 +36,9 @@ export function* fetchDetailedMovieSaga(action: FetchMovieDetailedRequest) {
       },
     );
     yield put(fetchMovieDetailedSuccess({movieID, movieDetailed: data}));
-    Success && Success();
+    oSuccess && oSuccess();
   } catch (e) {
-    Error && Error();
+    oError && oError();
     yield put(handleNetworkReduxError(e, action));
   }
 }
@@ -46,7 +46,7 @@ export function* fetchDetailedMovieSaga(action: FetchMovieDetailedRequest) {
 export function* fetchMovieAccountStateSaga(
   action: FetchMovieAccountStateRequest,
 ) {
-  const {movieID, Error, Success} = action;
+  const {movieID, oError, oSuccess} = action;
 
   try {
     const userIDs: UserIDParams = yield select(userIDParamsSelect);
@@ -61,9 +61,9 @@ export function* fetchMovieAccountStateSaga(
     );
 
     yield put(fetchMovieAccountStateSuccess({movieID, favorite, watchlist}));
-    Success && Success();
+    oSuccess && oSuccess();
   } catch (e) {
-    Error && Error();
+    oError && oError();
     yield put(handleNetworkReduxError(e, action));
   }
 }
@@ -71,7 +71,7 @@ export function* fetchMovieAccountStateSaga(
 export function* fetchMovieRecommendSaga(
   action: FetchMovieRecommendationRequest,
 ) {
-  const {movieID, Error, Success} = action;
+  const {movieID, oError, oSuccess} = action;
 
   try {
     const {data}: AxiosResponse<MovieListApiResponse> = yield call(
@@ -86,9 +86,9 @@ export function* fetchMovieRecommendSaga(
     yield put(
       fetchMovieRecommendationsSuccess({movieID, recommendMovieIDs: movieIDs}),
     );
-    Success && Success();
+    oSuccess && oSuccess();
   } catch (e) {
-    Error && Error();
+    oError && oError();
     yield put(handleNetworkReduxError(e, action));
   }
 }
@@ -97,16 +97,16 @@ export function* changeMovieStatusSaga({
   movieID,
   status,
   statusType,
-  Success,
-  Error,
+  oSuccess,
+  oError,
 }: ChangeMovieStatusRequest) {
   try {
     const userIDs: UserIDParams = yield select(userIDParamsSelect);
     yield call(changeMovieStatusAPI, {movieID, statusType, status, ...userIDs});
     yield put(changeMovieStatusSuccess({movieID, statusType, status}));
-    Success && Success();
+    oSuccess && oSuccess();
   } catch (e) {
     yield put(changeMovieStatusFail({movieID, statusType, status}));
-    Error && Error();
+    oError && oError();
   }
 }

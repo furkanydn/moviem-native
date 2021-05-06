@@ -1,6 +1,6 @@
 import {MovieID} from '../indexIE';
 
-export type SocialActionType = 'skip' | 'watchlist' | 'favorite';
+export type SocialActionType = 'skip' | 'favorite' | 'watchlist';
 
 export interface SocialAction {
   id: string;

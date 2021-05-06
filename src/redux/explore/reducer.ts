@@ -46,7 +46,7 @@ const exploreMoviesSuccess = (
 ): ExploreState => {
   const {movieIDs} = action;
   const newIDsMap = movieIDs.reduce(
-    (actually, value) => ((actually[value] = true), actually),
+    (actually: any, value) => ((actually[value] = true), actually),
     {},
   );
 

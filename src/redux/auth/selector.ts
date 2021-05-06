@@ -44,7 +44,10 @@ export const accountIDSelect = createSelector(authUserSelect, user =>
 
 export const userIDParamsSelect = createSelector(
   [sessionIDSelect, accountIDSelect],
-  (sessionID, accountID): UserIDParams => ({sessionId: sessionID, accountId: accountID}),
+  (sessionID, accountID): UserIDParams => ({
+    sessionId: sessionID,
+    accountId: accountID,
+  }),
 );
 
 //

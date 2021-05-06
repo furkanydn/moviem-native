@@ -1,6 +1,6 @@
 import {AxiosResponse} from 'axios';
 import {call, put} from 'redux-saga/effects';
-//
+// Yazılan bileşenler
 import {
   createAuthSessionAPI,
   createGuestSessionAPI,
@@ -27,10 +27,10 @@ import {
   CreateAuthSessionRequest,
 } from './action';
 
-//
+// Bileşen
 export function* createGuestSessionSaga({
-  onError,
-  onSuccess,
+  oError,
+  oSuccess,
 }: CreateGuestSessionRequest) {
   try {
     const {data}: AxiosResponse<CreateGuestSessionApiResponse> = yield call(
@@ -46,19 +46,19 @@ export function* createGuestSessionSaga({
       }),
     );
     yield call(createGuestSessionSaga);
-    onSuccess && onSuccess();
+    oSuccess && oSuccess();
   } catch (error) {
     ToastMessage.showMessage('Something went wrong. \nPlease try again later.');
     yield put(createGuestSessionFail(CreateResponseError(error.message)));
-    onError && onError();
+    oError && oError();
   }
 }
 
 export function* createAuthSessionSaga({
   username,
   password,
-  onSuccess,
-  onError,
+  oError,
+  oSuccess,
 }: CreateAuthSessionRequest) {
   try {
     const {
@@ -94,11 +94,11 @@ export function* createAuthSessionSaga({
     const user = createAuthUserAccountData(data, session_id);
     yield put(createAuthSessionSuccess(user));
     yield call(createSessionSuccessSaga);
-    onSuccess && onSuccess();
+    oSuccess && oSuccess();
   } catch (error) {
     const errorMessage = getErrorMessage(error?.response?.data?.status_code);
     yield put(createAuthSessionFail(CreateResponseError(errorMessage)));
-    onError && onError();
+    oError && oError();
   }
 }
 

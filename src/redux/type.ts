@@ -23,6 +23,6 @@ export type RootState = ReturnType<typeof persistedReducer>;
 
 // Farklı İstekler ve Geri Dönüşler İçin
 export interface WithCallback {
-  Success?: () => void;
-  Error?: () => void;
+  oSuccess?: () => void;
+  oError?: () => void;
 }

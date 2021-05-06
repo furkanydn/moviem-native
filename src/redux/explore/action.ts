@@ -1,6 +1,6 @@
-import {SwipeDirect} from '../../components/general/Deck';
-import {MovieID} from '../movies/type';
 import * as expActions from './constants';
+import {SwipeDirect} from '../../components';
+import {MovieID} from '../movies/type';
 
 // Bileşenlerin Hazırlanması
 export const exploreLoadRequest = () =>
