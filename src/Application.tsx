@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 //https://github.com/zoontek/react-native-bootsplash
 import RNBootSplash from 'react-native-bootsplash';
 
-//Uygulama içi
+// Uygulama içi
 import {ToastMessage} from './components/index';
 import {StyleSheets} from './StyleSheets';
 import {
@@ -30,7 +30,6 @@ class Application extends React.PureComponent<Props> {
   bSplashTime: NodeJS.Timeout | undefined;
 
   componentDidMount() {
-    // eslint-disable-next-line no-shadow
     const {startNetworkMonitoring} = this.props;
     startNetworkMonitoring();
     this.bSplashTime = setTimeout(() => {

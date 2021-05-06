@@ -7,7 +7,7 @@ interface FONT {
   styles: FontStyle[];
 }
 interface FONTS {
-  Poppins: FONT;
+  Inter: FONT;
 }
 interface FONTStyleParams {
   family?: FontFamily;
@@ -22,7 +22,7 @@ type FontStyle = ValuesOf<Pick<TextStyle, 'fontStyle'>>;
 
 // Font Ağırlık Yönetimi
 const fonts: FONTS = {
-  Poppins: {
+  Inter: {
     weights: [
       'Thin',
       'ExtraLight',
@@ -52,7 +52,7 @@ const fontWeightMapping: Record<string, FontWeight> = {
 
 // Dışarı Aktarılacak Yapıların Hazırlanması
 export const getFontStyle = (params: FONTStyleParams = {}): TextStyle => {
-  const {family = 'Poppins', weight = 'Regular', style = 'normal'} = params;
+  const {family = 'Inter', weight = 'Regular', style = 'normal'} = params;
   const {weights, styles} = fonts[family];
 
   const WeightSupported = weights.includes(weight);
