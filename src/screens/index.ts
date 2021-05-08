@@ -7,7 +7,7 @@ import Browse from './Browse/Browse';
 import Library from './Library/Library';
 import Detail from './Detail/Detail';
 import Settings from './Settings/Settings';
-import Splash from './Splash/Splash';
+import Splash from './Splash/SCSplash';
 
 // Exports
 export {
