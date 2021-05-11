@@ -1,17 +1,18 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {mapValues} from 'lodash';
 import {combineReducers} from 'redux';
-import {getStoredState, PersistConfig, persistReducer} from 'redux-persist';
+import {persistReducer} from 'redux-persist';
 import {PersistPartial} from 'redux-persist/es/persistReducer';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {RootState, RootAction} from './type';
+
 import {
   authReducer,
   exploreReducer,
   movieReducer,
-  searchReducer,
   networkReducer,
+  searchReducer,
   sectionReducer,
 } from './indexIE';
+import {RootAction, RootState} from './type';
 
 // Bileşenler
 const reducers = {
@@ -31,18 +32,9 @@ type ReducerKey = keyof typeof reducers | keyof PersistPartial;
 // Kalıcı Bileşenler
 const configuration = {
   storage: AsyncStorage,
-  version: 1,
+  version: 2,
   key: 'root',
   whitelist: ['auth', 'explore', 'movies'],
-  async getStoredState(persistConfig: PersistConfig<any, any, any, any>) {
-    const storedState = await getStoredState(persistConfig);
-    // @ts-ignore
-    // Saklama sürümü değişirse depo bırakılacak.
-    const samePersistVersion =
-      storedState?._persist?.version === persistConfig?.version;
-
-    return samePersistVersion ? storedState : ({} as any);
-  },
 };
 
 export const persistedReducer = persistReducer(configuration, combineReducer);
