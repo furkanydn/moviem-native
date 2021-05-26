@@ -6,10 +6,11 @@ import {
   View,
 } from 'react-native';
 import {connect} from 'react-redux';
+
 //
-import {MovieID, RootState, getMovieSelectByID} from '../../redux/indexIE';
+import {getMovieSelectByID, MovieID, RootState} from '../../redux/indexIE';
 import {THEME} from '../../utils/theme';
-import {TextView, SwipeThresh, InShadow, CardImage, ScoreYear} from '../index';
+import {CardImage, InShadow, ScoreYear, SwipeThresh, TextView} from '../index';
 
 // Durum ve Özellikler
 type OwnProps = {movieID: MovieID; swipeThresh?: SwipeThresh};
@@ -43,6 +44,7 @@ class Card extends React.PureComponent<Props, State> {
     this.setState({expanded: !expanded});
 
     Animated.timing(this.visibleAnimateValue, {
+      useNativeDriver: true,
       toValue: 1,
       duration: 100,
     }).start(() => {
@@ -54,6 +56,7 @@ class Card extends React.PureComponent<Props, State> {
     const {expanded} = this.state;
 
     Animated.timing(this.visibleAnimateValue, {
+      useNativeDriver: true,
       toValue: 0,
       duration: 100,
     }).start(() => {
@@ -84,7 +87,7 @@ class Card extends React.PureComponent<Props, State> {
 
   renderDetail = () => {
     const {movie} = this.props;
-    const {title, overview, voteAverage, year} = movie;
+    const {title, overview, vote_average, year} = movie;
 
     return (
       <Animated.View
@@ -96,7 +99,7 @@ class Card extends React.PureComponent<Props, State> {
           <TextView numberOfLines={2} type="headingOne">
             {title}
           </TextView>
-          <ScoreYear score={voteAverage} year={year} style={styles.score} />
+          <ScoreYear score={vote_average} year={year} style={styles.score} />
           <TextView numberOfLines={12} type="paragraphOne">
             {overview}
           </TextView>
@@ -119,7 +122,7 @@ class Card extends React.PureComponent<Props, State> {
   render() {
     const {movie, swipeThresh} = this.props;
     const {expanded} = this.state;
-    const {posterPath} = movie;
+    const {poster_path} = movie;
 
     return (
       <TouchableWithoutFeedback onPress={this.cardPress}>

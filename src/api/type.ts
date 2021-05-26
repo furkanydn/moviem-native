@@ -1,6 +1,6 @@
 import {MovieID} from '../redux/movies/type';
 
-// API Film Bileşenleri
+// Api Film Bileşenleri
 export interface Genre {
   id: number;
   name: string;
@@ -73,7 +73,7 @@ export interface UserIDParams {
   sessionId: string;
   accountId: number;
 }
-// API Film Durumları
+// Api Film Durumları
 export type MovieStatus =
   | 'Released'
   | 'Canceled'
