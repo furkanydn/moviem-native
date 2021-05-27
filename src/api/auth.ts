@@ -1,4 +1,4 @@
-import api from './API';
+import api from './api';
 import {withKEY} from './urlKEY';
 
 // Durumlar
@@ -53,7 +53,7 @@ export interface GetAccountDetailsApiResponse {
   username: string;
 }
 
-// API yönetimi
+// Api yönetimi
 export const createGuestSessionAPI = () =>
   api.get<CreateGuestSessionApiResponse>(
     withKEY('//authentication/guest_session/new'),

@@ -1,14 +1,15 @@
 import axios, {AxiosError, AxiosResponse} from 'axios';
+
 import {config} from '../config/config';
 import {createLogOutRequest} from '../redux/auth/action';
 import StoreService from '../redux/storeService';
 
-const API = axios.create({
+const Api = axios.create({
   baseURL: 'https://api.themoviedb.org/3',
   timeout: 6000,
 });
 
-API.interceptors.request.use(
+Api.interceptors.request.use(
   requestConfig => {
     if (config.logNetworkMessage) {
       console.log('[Request interceptor]', requestConfig);
@@ -18,7 +19,7 @@ API.interceptors.request.use(
   error => Promise.reject(error),
 );
 
-API.interceptors.response.use(
+Api.interceptors.response.use(
   (response: AxiosResponse) => {
     if (config.logNetworkMessage) {
       console.log('[Response interceptor]', response);
@@ -37,4 +38,4 @@ API.interceptors.response.use(
   },
 );
 
-export default API;
+export default Api;

@@ -18,7 +18,7 @@ type ReduxProps = ReturnType<typeof MapStateProps> & typeof MapDispatchProps;
 type Props = NavigationSwitchScreenProps<{}> & ReduxProps;
 
 // Bileşen
-class Splash extends React.Component<Props> {
+class SCSplash extends React.Component<Props> {
   componentDidMount() {
     const {user, navigation} = this.props;
     const routeN = user ? routeName.HomeStack : routeName.AuthStack;
@@ -31,4 +31,4 @@ class Splash extends React.Component<Props> {
   }
 }
 
-export default connect(MapStateProps, MapDispatchProps)(Splash);
+export default connect(MapStateProps, MapDispatchProps)(SCSplash);

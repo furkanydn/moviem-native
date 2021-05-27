@@ -7,12 +7,12 @@ import RNBootSplash from 'react-native-bootsplash';
 // Uygulama içi
 import {ToastMessage} from './components/index';
 import {StyleSheets} from './StyleSheets';
+import {RootStack} from './routes/routes';
 import {
   startNetworkMonitoring,
   stopNetworkMonitoring,
 } from './redux/network/action';
 import NavigationService from './routes/NavigationService';
-import {RootStack} from './routes/routes';
 
 // Durum ve Özellikler
 const MapStateProps = () => ({});

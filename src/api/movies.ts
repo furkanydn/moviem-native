@@ -1,6 +1,5 @@
-import API from './API';
-import {withKEY} from './urlKEY';
 import {MovieIDParam, MovieStatusType} from '../redux/movies/type';
+import Api from './api';
 import {
   MovieAPIDetailed,
   MovieAPIResponse,
@@ -8,6 +7,7 @@ import {
   RatedValue,
   UserIDParams,
 } from './type';
+import {withKEY} from './urlKEY';
 
 // Bileşenler - Tipler
 export interface MovieListApiResponse {
@@ -36,18 +36,18 @@ export interface ChangeMovieStatusApiResponse {
   status_message: string;
 }
 
-//- API Bileşenleri - Movies -//
+//- Api Bileşenleri - Movies -//
 
 //https://developers.themoviedb.org/3/movies/get-movie-details
 export const getMovieDetailAPI = ({movieID}: MovieIDParam) =>
-  API.get<MovieAPIDetailed>(withKEY(`/movie/${movieID}`));
+  Api.get<MovieAPIDetailed>(withKEY(`/movie/${movieID}`));
 
 //https://developers.themoviedb.org/3/movies/get-movie-account-states
 export const getMovieAccountStateAPI = ({
   movieID,
   sessionId,
 }: MovieIDParam & UserIDParams) =>
-  API.get<GetMovieAccountStateApiResponse>(
+  Api.get<GetMovieAccountStateApiResponse>(
     withKEY(`/movie/${movieID}/account_states`) + `&session_id=${sessionId}`,
   );
 
@@ -56,19 +56,19 @@ export const getMovieRecommendationsAPI = ({
   movieID,
   page,
 }: MovieIDParam & PageParam) =>
-  API.get<MovieListApiResponse>(
+  Api.get<MovieListApiResponse>(
     `${withKEY(`/movie/${movieID}/recommendations`)}&page=${page}`,
   );
 
 //https://developers.themoviedb.org/3/movies/get-popular-movies
 export const getPopularMovieAPI = ({page}: GetMovieListApiParam) =>
-  API.get<MovieListApiResponse>(`${withKEY('movie/popular')}&page=${page}`);
+  Api.get<MovieListApiResponse>(`${withKEY('movie/popular')}&page=${page}`);
 
 //https://developers.themoviedb.org/3/movies/get-top-rated-movies
 export const getTopRatedMovieAPI = ({page}: GetMovieListApiParam) =>
-  API.get<MovieListApiResponse>(`${withKEY('/movie/top_rated')}&page=${page}`);
+  Api.get<MovieListApiResponse>(`${withKEY('/movie/top_rated')}&page=${page}`);
 
-//- API Bileşenleri - Account -//
+//- Api Bileşenleri - Account -//
 
 //https://developers.themoviedb.org/3/account/mark-as-favorite or https://developers.themoviedb.org/3/account/add-to-watchlist
 export const changeMovieStatusAPI = (param: ChangeMovieStatusApiParam) => {
@@ -78,7 +78,7 @@ export const changeMovieStatusAPI = (param: ChangeMovieStatusApiParam) => {
     mediaID: movieID,
     [statusType]: status,
   };
-  return API.post<ChangeMovieStatusApiResponse>(
+  return Api.post<ChangeMovieStatusApiResponse>(
     `${withKEY(`/account/${accountId}/${statusType}`)}&session_id${sessionId}`,
     postQuery,
   );
@@ -90,7 +90,7 @@ export const getFavoriteMoviesAPI = ({
   accountId,
   sessionId,
 }: GetMovieListApiParam) =>
-  API.get<MovieListApiResponse>(
+  Api.get<MovieListApiResponse>(
     `${withKEY(
       `/account/${accountId}/favorite/movies`,
     )}&session_id=${sessionId}&page${page}`,
@@ -102,32 +102,32 @@ export const getWatchListMovieAPI = ({
   accountId,
   sessionId,
 }: GetMovieListApiParam) =>
-  API.get<MovieListApiResponse>(
+  Api.get<MovieListApiResponse>(
     `${withKEY(
       `/account/${accountId}/watchlist/movies`,
     )}&session_id=${sessionId}&page${page}`,
   );
 
-//- API Bileşenleri - Search -//
+//- Api Bileşenleri - Search -//
 
 //https://developers.themoviedb.org/3/search/search-movies
 export const getMoviesBySearchQueryAPI = ({
   query,
   page,
 }: {query: string} & PageParam) =>
-  API.get<MovieListApiResponse>(
+  Api.get<MovieListApiResponse>(
     `${withKEY('/search/movie')}&page=${page}&query${query}`,
   );
 
-//- API Bileşenleri - Trending -//
+//- Api Bileşenleri - Trending -//
 
 //https://developers.themoviedb.org/3/trending/get-trending
 export const getTrendingDailyMovieAPI = ({page}: GetMovieListApiParam) =>
-  API.get<MovieListApiResponse>(
+  Api.get<MovieListApiResponse>(
     `${withKEY('/trending/movie/day')}&page=${page}`,
   );
 
 export const getTrendingWeeklyMovieAPI = ({page}: GetMovieListApiParam) =>
-  API.get<MovieListApiResponse>(
+  Api.get<MovieListApiResponse>(
     `${withKEY('/trending/movie/week')}&page=${page}`,
   );
