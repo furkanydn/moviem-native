@@ -8,7 +8,7 @@ import {
   createStackNavigator,
   NavigationStackOptions,
 } from 'react-navigation-stack';
-import {createBottomTabNavigator} from 'react-navigation-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 // Uygulama İçi
 import {config} from '../config/config';
