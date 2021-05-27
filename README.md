@@ -1,4 +1,6 @@
 # Moviem Native
+### This project discontinued.
+
 <p align="center">
 <img src="https://github.com/furkanydn/moviem-native/blob/master/src/image/logo.png" width="350" title="Project Logo">
 </p>
