@@ -1,5 +1,5 @@
 {
-  "name": "moviem",
+  "name": "Moviem",
   "version": "0.0.3",
   "private": true,
   "scripts": {
@@ -80,7 +80,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn compile && yarn lint"
+      "pre-commit": "npm run lint"
     }
   },
   "jest": {
